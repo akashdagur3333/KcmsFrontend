@@ -1,0 +1,71 @@
+<div class="card" style="background-color: black;">
+  <h1 class="d-flex justify-content-center pt-3"
+    style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Question</h1>
+  <div class="hljs-container pb-0">
+    <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+  </div>
+  <div class="card-body pb-2">
+    <div class="col-xl-12">
+      <div class="form-group mb-3">
+        <div class="table-responsive">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th scope="row">
+                  <input type="checkbox" class="form-check-input">
+                </th>
+                <th scope="col">ID</th>
+                <th scope="col" class="tableText">QST ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">TITLE</th>
+                <th scope="col">TYPE</th>
+                <th scope="col">QOP1</th>
+                <th scope="col">QOP2</th>
+                <th scope="col">QOP3</th>
+                <th scope="col">QOP4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let question of res;let i=index">
+                <th scope="row"><input type="checkbox" class="form-check-input"
+                  [checked]="question.select"
+                  (change)="questionChange($event,question,question._id)"
+                  >
+            </th>
+                                <th scope="row">{{i+1}}</th>
+                                <td>QST{{question._id}}</td>
+                                <td>{{question.name}}</td>
+                                <td><div  style="height: 100px;overflow-y: auto;"><ul *ngFor="let r of question.question" style="list-style-type: none;">
+                                    <li>{{r}}</li>
+                                     </ul></div></td>
+                                <td>{{question.questionType}}</td>
+                                <td>{{question.opt1}}</td>
+                                <td>{{question.opt2}}</td>
+                                <td>{{question.opt3}}</td>
+                                <td>{{question.opt4}}</td>
+                                    </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+
+      </div>
+      <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" (click)="addQuestion()">Add Question</button>
+
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="" >Close</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="card-arrow">
+    <div class="card-arrow-top-left"></div>
+    <div class="card-arrow-top-right"></div>
+    <div class="card-arrow-bottom-left"></div>
+    <div class="card-arrow-bottom-right"></div>
+  </div>
+  <div class="hljs-container mt-3">
+    <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+  </div>
+</div>

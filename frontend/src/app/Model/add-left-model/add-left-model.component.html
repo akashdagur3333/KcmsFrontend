@@ -1,0 +1,145 @@
+<div class="card" style="background-color: black; overflow-x: hidden;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Left</h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+      <form [formGroup]="joinedForm">
+        <div class="row">
+          <div class="col-xl-3">
+            <div class="form-group mb-3">
+              <label class="form-label" for="designation">RPT ID</label>
+              <input disabled="disabled" value="RPT{{data._id}}" class="btn btn-blue span3 disabledColor">
+            </div>
+  
+          </div>
+  
+          <div class="col-xl-3">
+            <div class="form-group mb-3">
+              <label class="form-label" for="designation">EMP TYPE</label>
+              <input disabled="disabled" value="{{data.employee_type}}" class="btn btn-blue span3 disabledColor">
+            </div>
+  
+          </div>
+          <div class="col-xl-3">
+            <div class="form-group mb-3">
+              <label class="form-label" for="designation">ANY DUES</label>
+              <input disabled="disabled" value="{{data.pending_value}}"  class="btn btn-blue span3 disabledColor">
+            </div>
+  
+          </div>
+          <div class="col-xl-3">
+            <div class="form-group mb-3">
+              <label class="form-label" for="designation">REPORTING DATE</label>
+              <input disabled="disabled" value="{{data.offer_letter_date}}"  class="btn btn-blue span3 disabledColor">
+            </div>
+  
+          </div>
+          <div class="col-xl-3">
+            <div class="form-group mb-3">
+              <label class="form-label" for="designation">OFFER LETTER SERIAL</label>
+              <input disabled="disabled" value="{{data.offer_letter_account}}"  class="btn btn-blue span3 disabledColor">
+            </div>
+  
+          </div>
+          <div class="col-xl-3">
+            <div class="form-group mb-3">
+              <label class="form-label" for="designation">DOJ(AS PER OL)</label>
+              <input disabled="disabled" value="{{data.offer_letter_date}}"  class="btn btn-blue span3 disabledColor">
+            </div>
+  
+          </div>
+          <div class="col-xl-3">
+            <div class="form-group mb-3">
+              <label class="form-label" for="designation">BATCH ID</label>
+              <input disabled="disabled" value="BTH{{data.select_batch[0]._id}}"  class="btn btn-blue span3 disabledColor">
+            </div>
+  
+          </div>
+          <div class="col-xl-3">
+            <div class="form-group mb-3">
+              <label class="form-label" for="designation">BATCH TYPE</label>
+              <input disabled="disabled" value="{{data.select_batch[0].batch_type}}" class="btn btn-blue span3 disabledColor">
+            </div>
+  
+          </div>
+          <div class="col-xl-3" id="batch_start">
+            <div class="form-group mb-3">
+              <label class="form-label" for="batch_start">BATCH (STARTING DATE)</label>
+              <input type="date" class="form-control"  formControlName="batch_start" name="batch_start" placeholder="Batch Starting Date">
+            </div>
+  
+          </div>
+          <div class="col-xl-3" id="training_start">
+            <div class="form-group mb-3">
+              <label class="form-label" for="training_start">TRAINING (STARTING DATE)</label>
+              <input type="date" class="form-control" formControlName="training_start" name="training_start" placeholder="Training Starting Date">
+            </div>
+          </div>
+          <div class="col-xl-3" id="training_complete">
+            <div class="form-group mb-3">
+              <label class="form-label" for="training_complete">TRAINING (Completion DATE)</label>
+              <input type="date" class="form-control" formControlName="training_complete" name="training_complete" placeholder="Training Completion Date">
+            </div>
+          </div>
+          <div class="col-xl-3" id="joining_date">
+            <div class="form-group mb-3">
+              <label class="form-label" for="joining_date">Date Of Joining</label>
+              <input type="date" class="form-control" id="doj" disabled="disabled">
+            </div>
+          </div>
+          <div class="col-xl-3">
+            <div class="form-group mb-3">
+              <label class="form-label" for="seperation_date">Date Of Seperation</label>
+              <input type="date" class="form-control" formControlName="seperation_date" name="seperation_date">
+            </div>
+          </div>
+          <div class="col-xl-3">
+            <label class="form-label" for="seperation_type">Seperation Type</label>
+            <select class="form-select form-select-lg mb-3" formControlName="seperation_type" name="seperation_type">
+                <option disabled selected value="">~Select One~</option>
+                <option value="Normal">Normal</option>
+                <option value="AOD">AOD</option>
+                <option value="ATL">ATL</option>
+                <option value="Refund">Refund</option>
+
+              </select>
+            </div>
+            <div class="col-xl-3">
+                <label class="form-label" for="rejoining_possible">Rejoining Possible</label>
+                <select class="form-select form-select-lg mb-3" formControlName="rejoining_possible" name="rejoining_possible">
+                    <option disabled selected value="">~Select One~</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+         
+                  </select>
+                </div>
+          <div class="col-xl-3">
+            <div class="form-group mb-3">
+              <label class="form-label" for="hr_remarks">HR Remarks</label>
+              <input type="text" class="form-control" formControlName="hr_remarks" name="hr_remarks" placeholder="HR Remarks">
+            </div>
+          </div>
+  
+  
+  
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+          <button type="button" class="btn btn-outline-theme btn-lg" (click)="addIntraining()">{{Submit}}</button>
+          <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+  
+        </div>
+      </form>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>
+  

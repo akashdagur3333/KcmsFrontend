@@ -1,0 +1,236 @@
+
+<div class="card"  style="background-color: black; ">
+    <h1 class="d-flex justify-content-center pt-3" style="font-family: 'Courier New', Courier, monospace;text-shadow: 1px 1px whitesmoke;font-size: 40px;font-weight: 500;">{{submit}}</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="studentForm">
+        <div class="row">
+            <div class="col-xl-4" id="category" hidden>
+                <div class="form-group mb-3">
+                <label class="form-label" for="category">Category</label>
+                <select class="form-select" formControlName="category" name="category" (change)="changeCategory()">
+                <option disabled selected value="">~Select One~</option>
+                <option value="walk-in">Walk-In</option>
+                <option value="reference">Reference</option>
+                </select>
+                </div>
+                </div>
+                <div class="col-xl-4" id="type" hidden>
+                    <div class="form-group mb-3">
+                    <label class="form-label" for="type">Type</label>
+                    <select class="form-select" formControlName="type" name="type">
+                    <option disabled selected value="">~Select One~</option>
+                    <option value="vsr">VSR</option>
+                    <option value="exp">EXP</option>
+                    </select>
+                    </div>
+                    </div>
+        <div class="col-xl-4">
+        <div class="form-group mb-3">
+        <label class="form-label" for="aadhar_number">Aadhar Number</label>
+        <input type="number" class="form-control" formControlName="aadhar_number" name="aadhar_number" placeholder="Aadhar Number">
+        </div>
+        
+        </div>
+        <div class="col-xl-4">
+            <div class="form-group mb-3">
+            <label class="form-label" for="name">Name</label>
+            <input type="text" class="form-control" formControlName="name" name="name" placeholder="Name">
+            </div>
+            
+            </div>
+            <div class="col-xl-4">
+                <div class="form-group mb-3">
+                <label class="form-label" for="sex">Sex</label>
+                <select class="form-select" formControlName="sex" name="sex">
+                    <option disabled selected value="">~Select One~</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+                <option value="other">other</option>
+                </select>
+                </div>
+                </div>
+
+
+                <div class="col-xl-4">
+                    <label class="form-label" for="qualification">Qualification</label>
+                    <select class="form-select form-select-lg mb-3" formControlName="qualification" name="qualification" id="qualification" (change)="target(qualification.value)">
+                        <option disabled selected value="">~Select One~</option>
+                        <option *ngFor="let qua of qualification" value="{{qua.qualification_name}}">{{qua.qualification_name}}</option>
+                      </select>
+                    </div>
+                    
+                    <div class="col-xl-4">
+                        <div class="form-group mb-3">
+                        <label class="form-label" for="stream">Stream</label>
+                        <select class="form-select" formControlName="stream" name="stream">
+                            <option disabled selected value="">~Select One~</option>
+                            <option *ngFor="let str of stream">{{str.stream}}</option>
+                        </select>
+                        </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="form-group mb-3">
+                            <label class="form-label" for="package">Package</label>
+                            <select class="form-select" formControlName="package" name="package" (change)="Packagedata()">
+                                <option disabled selected value="">~Select One~</option>
+                                <option *ngFor="let p of allPackage" value="{{p._id}}">{{p.package_name}}</option>
+                            </select>
+                            </div>
+                            </div>
+        <div class="col-xl-4">
+            <div class="form-group mb-3">
+            <label class="form-label" for="contact_no1">Contact Number:1</label>
+            <input type="number" class="form-control" formControlName="contact_no1" name="contact_no1" placeholder="Contact Number:1">
+            </div>
+            
+            </div> 
+            <div class="col-xl-4">
+                <div class="form-group mb-3">
+                <label class="form-label" for="contact_no2">Contact Number:2</label>
+                <input type="number" class="form-control" formControlName="contact_no2" name="contact_no2" placeholder="Contact Number:2">
+                </div>  
+                </div> 
+
+                <div class="col-xl-4" id="college" hidden>
+                    <div class="form-group mb-3">
+                    <label class="form-label" for="college">Select College</label>
+                    <select class="form-select" formControlName="college" name="college" (change)="collegeData()">
+                        <option disabled selected value="">~Select One~</option>
+                        <option *ngFor="let college of AllColleges" value="{{college._id}}">{{college.college_name}},{{college.college_state}},({{college.college_pin_code_code}})-{{college.college_type}}</option>
+                    <option value="other">Other</option>
+                    </select>
+                    </div>
+                    </div>
+
+                    <div class="col-xl-4" id="college_name" hidden>
+                        <div class="form-group mb-3">
+                        <label class="form-label" for="college_name">College Name</label>
+                        <input type="text" class="form-control" formControlName="college_name" name="college_name" placeholder="College Name">
+                        </div>  
+                        </div> 
+                        <div class="col-xl-4" id="college_city" hidden>
+                            <div class="form-group mb-3">
+                            <label class="form-label" for="college_city">College City</label>
+                            <input type="text" class="form-control" formControlName="college_city" name="college_city" placeholder="College City">
+                            </div>  
+                            </div> 
+
+                            <div class="col-xl-4"  id="college_state" hidden>
+                                <div class="form-group mb-3">
+                                <label class="form-label" for="college_state">College State</label>
+                                <select class="form-select" formControlName="college_state" name="college_state">
+                                    <option disabled selected value="">~Select One~</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chandigarh">Chandigarh</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                    <option value="Daman and Diu">Daman and Diu</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Lakshadweep">Lakshadweep</option>
+                                    <option value="Puducherry">Puducherry</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option> 
+                                </select>
+                                </div>
+                                </div>
+
+                                <div class="col-xl-4" id="college_pin_code" hidden>
+                                    <div class="form-group mb-3">
+                                    <label class="form-label" for="college_pin_code">College Pin Code</label>
+                                    <input type="number" class="form-control" formControlName="college_pin_code" name="college_pin_code" placeholder="College Pin">
+                                    </div>  
+                                    </div> 
+
+                                    <div class="col-xl-4">
+                                        <div class="form-group mb-3">
+                                        <label class="form-label" for="college_type">College Type</label>
+                                        <select class="form-select" formControlName="college_type" name="college_type">
+                                            <option disabled selected value="">~Select One~</option>
+                                            <option value="Private">Private</option>
+                                            <option value="Government">Government</option>
+                                            <option value="International">International</option>                                        </select>
+                                        </div>
+                                        </div>
+
+
+                                        <div class="col-xl-4" id="refrence_name" hidden>
+                                            <div class="form-group mb-3">
+                                            <label class="form-label" for="refrence_name">Refrence Name</label>
+                                            <input type="text" class="form-control" formControlName="refrence_name" name="refrence_name" placeholder="Refrence Name">
+                                            </div>  
+                                            </div> 
+
+                                            <div class="col-xl-4" id="refrence_contact" hidden>
+                                                <div class="form-group mb-3">
+                                                <label class="form-label" for="refrence_contact">Refrence Contact</label>
+                                                <input type="number" class="form-control" formControlName="refrence_contact" name="refrence_contact" placeholder="Refrence Contact">
+                                                </div>  
+                                                </div> 
+            
+
+                <div class="col-xl-4">
+                    <div class="form-group mb-3">
+                    <label class="form-label" for="status">Status</label>
+                    <select class="form-select" formControlName="status" name="status">
+                        <option disabled selected value="">~Select One~</option>
+                        <option value="Selected">Selected</option>
+                    <option value="Hold">Hold</option>
+                    <option value="Rejected">Rejected</option>
+                    </select>
+                    </div>
+                    </div>
+            <div class="col-xl-4">
+                <div class="form-group mb-3">
+                <label class="form-label" for="hr_remarks">HR Remarks</label>
+                <input type="text" class="form-control" formControlName="hr_remarks" name="hr_remarks" placeholder="HR Remarks">
+                </div>
+                
+                </div> 
+                  
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addStudents()">{{submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+        <div class="card-arrow-top-left"></div>
+        <div class="card-arrow-top-right"></div>
+        <div class="card-arrow-bottom-left"></div>
+        <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container mt-3">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        </div>

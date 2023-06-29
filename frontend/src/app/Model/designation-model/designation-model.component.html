@@ -1,0 +1,42 @@
+<div class="card"  style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3" style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Designation</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="designationForm">
+        <div class="row">
+            <div class="col-xl-6">
+                <label class="form-label" for="head_department">Head Department</label>
+                <select class="form-select form-select-lg mb-3" formControlName="head_department" name="head_department">
+                  <option disabled selected value="">~select One~</option>
+                    <option *ngFor="let dep of allDepartment" value="{{dep.name}}">{{dep.name}}</option>
+                  </select>
+                </div>
+        <div class="col-xl-6">
+        <div class="form-group mb-3">
+        <label class="form-label" for="designation">Designation</label>
+        <input type="text" class="form-control" formControlName="designation" name="designation" placeholder="Designation">
+        </div>
+        
+        </div>
+
+      
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addDesignation()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+            <div class="card-arrow-top-left"></div>
+            <div class="card-arrow-top-right"></div>
+            <div class="card-arrow-bottom-left"></div>
+            <div class="card-arrow-bottom-right"></div>
+          </div>
+          <div class="hljs-container mt-3">
+            <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+          </div>
+        </div>

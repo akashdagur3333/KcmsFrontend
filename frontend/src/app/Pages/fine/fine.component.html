@@ -1,0 +1,108 @@
+
+  
+    <div id="content" class="app-content">
+      <div class="row">
+        <style>
+          .mdc-text-field--filled {
+            background-color: transparent !important;
+          }
+  
+        </style>
+        <div class="d-flex justify-content-end pt-5 ">
+          <div class="row">
+            <div class="d-flex justify-content-end">
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="input-group" style="width: 200px;">
+                    <input type="search" aria-label="First name" class="form-control" matInput
+                      (keyup)="applyFilter($event)" #input placeholder="Search">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="card mt-5">
+          <div class="card-body">
+            <div class="row mb-n3 table-responsive">
+              <div class="small text-inverse text-opacity-50 mb-3"><b class="fw-bold">FINES</b></div>
+              <table class="table" mat-table [dataSource]="dataSource" matSort>
+                <thead>
+                  <tr>
+                    <ng-container matColumnDef="id">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> ID </th>
+                      <td mat-cell *matCellDef="let row;let i=index;" scope="row"> {{i+1}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="rpt_id">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> RPT ID </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.rpt_id}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> NAME </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.name}} </td>
+                    </ng-container>
+  
+                    <ng-container matColumnDef="father_name">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> FATHER NAME </th>
+                      <td mat-cell *matCellDef="let row;" scope="row"> {{row.father_name}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="imposed_date">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> IMPOSED DATE </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.imposed_date}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="amount">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> AMOUNT </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.amount}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="imposed_by">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> IMPOSED BY </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.imposed_by}} </td>
+                    </ng-container>
+  
+                    <ng-container matColumnDef="remarks">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> REMARKS </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.remarks}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="gst_amount">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> GST AMOUNT </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.gst_amount}} </td>
+                    </ng-container>
+  
+                    <ng-container matColumnDef="action">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                      <td mat-cell *matCellDef="let row">
+                        <i _ngcontent-olo-c1="" class="fa fa-trash ps-2 ms-auto fs-16px my-n1"
+                          style="color: red !important" (click)="deleteFine(row._id)"></i></td>
+  
+                    </ng-container>
+  
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns" style="color: white !important;"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+                  <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                  </tr>
+                </thead>
+                <tbody>
+  
+                </tbody>
+              </table>
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  
+            </div>
+  
+          </div>
+          <div class="card-arrow">
+            <div class="card-arrow-top-left"></div>
+            <div class="card-arrow-top-right"></div>
+            <div class="card-arrow-bottom-left"></div>
+            <div class="card-arrow-bottom-right"></div>
+          </div>
+          <div class="hljs-container">
+            <pre><code class="xml" data-url="assets/data/table-elements/code-1.json"></code></pre>
+          </div>
+        </div>
+      </div>
+  
+    </div>

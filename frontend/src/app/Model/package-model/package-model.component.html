@@ -1,0 +1,196 @@
+<div class="card" style="background-color: black;overflow-y: auto;">
+  <h1 class="d-flex justify-content-center pt-3"
+    style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Packages</h1>
+  <div class="hljs-container pb-0">
+    <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+  </div>
+  <div class="card-body pb-2">
+    <form [formGroup]="packageForm">
+      <div class="row">
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="package_name">Package Name</label>
+            <input type="text" class="form-control" formControlName="package_name" name="package_name" placeholder="Package Name">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="stipend">Stipend</label>
+            <input type="text" class="form-control" formControlName="stipend" name="stipend" placeholder="Stipend">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="training_days">Training Days</label>
+            <input type="text" class="form-control" formControlName="training_days" name="training_days" placeholder="Training Days">
+          </div>
+
+        </div>
+
+        <h2>Salary Head</h2>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="basic">Basic</label>
+            <input type="text" class="form-control" formControlName="basic" name="basic" placeholder="Basic">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="mobile_internet">Mobile & Internet</label>
+            <input type="text" class="form-control" formControlName="mobile_internet" name="mobile_internet"
+              placeholder="Mobile & Internet">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="project_allowance">Project Allowances</label>
+            <input type="text" class="form-control" formControlName="project_allowance" name="project_allowance"
+              placeholder="Project Allowances">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="other_allowance">Other Allowances</label>
+            <input type="text" class="form-control" formControlName="other_allowance" name="other_allowance"
+              placeholder="Other Allowances">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="incentives">Incentives</label>
+            <input type="text" class="form-control" formControlName="incentives" name="incentives" placeholder="Incentives">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="special_all">Special all</label>
+            <input type="text" class="form-control" formControlName="special_all" name="special_all" placeholder="Special all">
+          </div>
+
+        </div>
+
+        <h2>Deductions</h2>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="esic">ESIC</label>
+            <input type="text" class="form-control" formControlName="esic" name="esic" placeholder="ESIC">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="pf">PF</label>
+            <input type="text" class="form-control" formControlName="pf" name="pf" placeholder="PF">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="admin">Admin</label>
+            <input type="text" class="form-control" formControlName="admin" name="admin" placeholder="Admin">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="resources_development">Resources & Development</label>
+            <input type="text" class="form-control" formControlName="resources_development" name="resources_development"
+              placeholder="Resources & Development">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="social_welfare">Social Welfare</label>
+            <input type="text" class="form-control" formControlName="social_welfare" name="social_welfare" placeholder="Social Welfare">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="variable_allowances">Variable Allowances</label>
+            <input type="text" class="form-control" formControlName="variable_allowances" name="variable_allowances"
+              placeholder="Variable Allowances">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="gross_deduction">Gross Deduction</label>
+            <input type="text" class="form-control" formControlName="gross_deduction" name="gross_deduction"
+              placeholder="Gross Deduction">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="ctcpm">CTC(PM)</label>
+            <input type="text" class="form-control" formControlName="ctcpm" name="ctcpm" placeholder="0">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="ctcannual">CTC (Annual)</label>
+            <input type="text" class="form-control" formControlName="ctcannual" name="ctcannual" placeholder="0">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="net_pay">Net Pay (In Hand)</label>
+            <input type="text" class="form-control" formControlName="net_pay" name="net_pay" placeholder="0">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="ctcafter">CTC After One Year(Annual)</label>
+            <input type="text" class="form-control" formControlName="ctcafter" name="ctcafter"
+              placeholder="CTC After One Year(Annual)">
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+      <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addPackage()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+      </div>
+    </form>
+  </div>
+  <div class="card-arrow">
+    <div class="card-arrow-top-left"></div>
+    <div class="card-arrow-top-right"></div>
+    <div class="card-arrow-bottom-left"></div>
+    <div class="card-arrow-bottom-right"></div>
+  </div>
+  <div class="hljs-container mt-3">
+    <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+  </div>
+</div>

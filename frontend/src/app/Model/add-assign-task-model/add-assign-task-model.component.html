@@ -1,0 +1,117 @@
+<div class="card" style="background-color: black; overflow-x: hidden;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Assigned Task</h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+      <form [formGroup]="AssignedTaskForm">
+        <div class="row">
+          <div class="col-xl-3" id="hidden">
+            <div class="form-group mb-3">
+              <label class="form-label">TSK ID</label>
+              <input disabled="disabled" value="TSK{{allData._id}}"
+                class="btn btn-blue span3 disabledColor">
+            </div>
+
+          </div>
+            <div class="col-xl-3" id="hidden">
+                <div class="form-group mb-3">
+                  <label class="form-label">AST ID</label>
+                  <input disabled="disabled" value="AST{{allData.ast_id}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+           
+            <div class="col-xl-3" id="hidden2">
+                <div class="form-group mb-3">
+                  <label class="form-label">PRT ID</label>
+                  <input disabled="disabled" value="PRT{{allData.prt_id}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+                <div class="col-xl-3" id="hidden3">
+                    <div class="form-group mb-3">
+                      <label class="form-label">CLT ID</label>
+                      <input disabled="disabled" value="CLT{{allData.clt_id}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+      
+                  </div>
+                  <div class="col-xl-3" id="hidden3">
+                    <div class="form-group mb-3">
+                      <label class="form-label">SUB DEPARTMENT</label>
+                      <input disabled="disabled" value="{{allData.assign_to_department}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+      
+                  </div>
+                  <div class="col-xl-3" id="hidden3">
+                    <div class="form-group mb-3">
+                      <label class="form-label">TEAM MANAGER</label>
+                      <input disabled="disabled" value="RPT{{rpt_team_lead}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+      
+                  </div>
+           
+
+                  <div class="col-xl-3">
+                    <label class="form-label" for="task_assign_to">TASK ASSIGN TO</label>
+                    <select class="form-select form-select-lg mb-3" formControlName="task_assign_to" name="task_assign_to">
+                      <option disabled selected value="" >~ Select One~</option>
+                        <option *ngFor="let emp of AllDep" value="{{emp.name}},{{emp.rpt_id}}">{{emp.name}}</option>
+                      </select>
+                    </div>          
+
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="task_expiry_date">TASK EXPIRY DATE</label>
+                  <input type="date" class="form-control" formControlName="task_expiry_date" name="task_expiry_date"
+                    placeholder="Task Expiry Date">
+                </div>
+  
+              </div>
+
+
+              <div class="col-xl-3">
+                <label class="form-label" for="assign_by">ASSIGN By</label>
+                <select class="form-select form-select-lg mb-3" formControlName="assign_by" name="assign_by" (change)="leadChange()">
+                  <option disabled selected value="" >~ Select One~</option>
+                    <option *ngFor="let lead of teamLead" value="{{lead.rpt}}">RPT{{lead.rpt}} ({{lead.name}})</option>
+                  </select>
+                </div>
+
+
+
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="remarks">Remarks</label>
+                  <input type="text" class="form-control" formControlName="remarks" name="remarks"
+                    placeholder="Remarks">
+                </div>
+  
+              </div>
+  
+  
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+          <button type="button" class="btn btn-outline-theme btn-lg" (click)="addAssignedTask()">{{Submit}}</button>
+          <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+  
+        </div>
+      </form>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>
+  

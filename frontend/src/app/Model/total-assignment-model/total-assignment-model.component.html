@@ -1,0 +1,91 @@
+<div class="card" style="background-color: black; overflow-x: hidden;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Total Assignment</h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+      <form [formGroup]="AssignmentForm">
+        <div class="row">
+           
+            <div class="col-xl-3" id="hidden">
+                <div class="form-group mb-3">
+                  <label class="form-label">PRT ID</label>
+                  <input disabled="disabled" value="PRT{{allData._id}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+                <div class="col-xl-3" id="hidden2">
+                    <div class="form-group mb-3">
+                      <label class="form-label">CLT ID</label>
+                      <input disabled="disabled" value="CLT{{allData.clt_id}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+      
+                  </div>
+                 
+          
+            <div class="col-xl-3">
+                <label class="form-label" for="assign_to_department">ASSIGN TO DEPT</label>
+                <select class="form-select form-select-lg mb-3" formControlName="assign_to_department" name="assign_to_department" (change)="loadTeamLead($event)" (change)="onemore()">
+                  <option disabled selected value="">~Select One~</option>
+                  <option *ngFor="let dep of AllSubDepartment" value="{{dep.Sub_department}}">{{dep.Sub_department}}</option>
+                </select>
+              </div>
+
+              <div class="col-xl-3">
+                <label class="form-label" for="team_lead">TEAM MANAGER</label>
+                <select class="form-select form-select-lg mb-3" formControlName="team_lead" name="team_lead">
+                  <option disabled selected value="">~Select One~</option>
+                  <option *ngFor="let dep of AllTeam" value="{{dep.rpt_id}} ({{dep.name}})">{{dep.name}}</option>
+                </select>
+              </div>
+           
+
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="assignment_date">ASSIGNMENT DATE</label>
+                  <input type="date" class="form-control" formControlName="assignment_date" name="assignment_date"
+                    placeholder="Assignment Date">
+                </div>
+  
+              </div>
+              
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="delivery_date">DELIVERY DATE</label>
+                  <input type="date" class="form-control" formControlName="delivery_date" name="delivery_date"
+                    placeholder="Delivery Date">
+                </div>
+  
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="remarks">REMARKS</label>
+                  <input type="text" class="form-control" formControlName="remarks" name="remarks"
+                    placeholder="Remarks">
+                </div>
+  
+              </div>
+  
+  
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+          <button type="button" class="btn btn-outline-theme btn-lg" (click)="addAssignment()">{{Submit}}</button>
+          <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+  
+        </div>
+      </form>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>
+  

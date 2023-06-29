@@ -1,0 +1,268 @@
+<div id="sidebar" class="app-sidebar" style="overflow-y: scroll !important;border-right: 1px solid grey;">
+
+    <div class="app-sidebar-content">
+  
+      <div class="menu">
+        <div class="menu-header">CENTRAL MANAGEMENT</div>
+        <div class="menu-item">
+          <a routerLink="/User/assign" class="menu-link">
+            <span class="menu-icon"><i class="fa fa-laptop"></i></span>
+            <span class="menu-text">Assigned Task</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a routerLink="/User/complete" class="menu-link">
+            <span class="menu-icon"><i class="fa fa-laptop"></i></span>
+            <span class="menu-text">Completed Task</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a routerLink="/User/fail" class="menu-link">
+            <span class="menu-icon"><i class="fa fa-laptop"></i></span>
+            <span class="menu-text">Failed Task</span>
+          </a>
+        </div>
+  
+        <div class="menu-item has-sub inactive" id="tech" hidden>
+          <a class="menu-link" (click)="techOpen()">
+            <span class="menu-icon">
+              <i class="fa fa-laptop"></i>
+            </span>
+            <span class="menu-text">Tech Management</span>
+            <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+          </a>
+          <div class="menu-submenu">
+           
+            <div class="menu-item">
+              <a routerLink="/User/EmpPerformance" class="menu-link">
+                <span class="menu-text">Emp Performance</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/Team" class="menu-link">
+                <span class="menu-text">Teams</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/TotalProject" class="menu-link">
+                <span class="menu-text">Total Projects</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/TotalAssignment" id="totalassignment" class="menu-link">
+                <span class="menu-text">Total Assignments</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/TotalTask" class="menu-link">
+                <span class="menu-text">Total Tasks</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/AssignedTask" id="assign" class="menu-link">
+                <span class="menu-text">Assigned Tasks</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/CompletedTask" id="complete" class="menu-link">
+                <span class="menu-text">Completed Tasks</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/FailedTask" id="fail" class="menu-link">
+                <span class="menu-text">Failed Tasks</span>
+              </a>
+            </div>
+  
+  
+          </div>
+        </div>
+        <div class="menu-item has-sub inactive" id="hrm" hidden>
+          <a class="menu-link" (click)="hrOpen()">
+            <span class="menu-icon">
+              <i class="fa fa-person"></i>
+            </span>
+            <span class="menu-text">HR Management</span>
+            <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+          </a>
+          <div class="menu-submenu" id="hrdata">
+           
+            <div class="menu-item">
+              <a routerLink="/User/trainingBatches" id="training_batches" (click)="openhrm('training_batches')" class="menu-link">
+                <span class="menu-text">Training Batches</span>
+              </a>
+            </div>
+            <div class="menu-item has-sub inactive" id="hrm1">
+              <a (click)="openplacement()"class="menu-link">
+             
+                <span class="menu-text">Placements</span>
+                <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+              </a>
+              <div class="menu-submenu">
+            <div class="menu-item">
+              <a routerLink="/User/colleges" class="menu-link">
+                <span class="menu-text">Colleges</span>
+              </a>
+            </div>
+            <div class="menu-item" >
+              <a routerLink="/User/drive" class="menu-link">
+                <span class="menu-text">Drives</span>
+              </a>
+            </div>
+            <div class="menu-item" >
+              <a routerLink="/User/student" class="menu-link">
+                <span class="menu-text">Students</span>
+              </a>
+            </div>
+           
+            </div>
+            </div>
+            <div class="menu-item has-sub inactive" id="hrm2">
+              <a (click)="openReporting()" class="menu-link">
+             
+                <span class="menu-text">Reportings</span>
+                <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+              </a>
+              <div class="menu-submenu">
+            <div class="menu-item">
+              <a routerLink="/User/reporting" class="menu-link">
+                <span class="menu-text">Reportings</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/reciept" class="menu-link">
+                <span class="menu-text">Receipts</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/fine" class="menu-link">
+                <span class="menu-text">Fine</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/otherCharges" class="menu-link">
+                <span class="menu-text">Other Charges</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/fineWaiver" class="menu-link">
+                <span class="menu-text">Fine (Waiver)</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/VSRWaiver" class="menu-link">
+                <span class="menu-text">VSR (Waiver)</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/otherWaiver" class="menu-link">
+                <span class="menu-text">Other (Waiver)</span>
+              </a>
+            </div>
+            </div>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/trainings" class="menu-link">
+                <span class="menu-text">Trainings</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/testQuestions" class="menu-link">
+                <span class="menu-text">Test Questions</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/trainingTests" class="menu-link">
+                <span class="menu-text">Training Tests</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/joinings" class="menu-link">
+                <span class="menu-text">Joinings</span>
+              </a>
+            </div>
+            <div class="menu-item has-sub inactive" id="hrm3">
+              <a (click)="openEmpStatus()" class="menu-link">
+             
+                <span class="menu-text">EMP Status</span>
+                <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+              </a>
+              <div class="menu-submenu">
+            <div class="menu-item">
+              <a routerLink="/User/jobStatus" class="menu-link">
+                <span class="menu-text">Job Status</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/awaited" class="menu-link">
+                <span class="menu-text">Awaited</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/InTraining" class="menu-link">
+                <span class="menu-text">In Training</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/TrainingCompleted" class="menu-link">
+                <span class="menu-text">Training Completed</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/Joined" class="menu-link">
+                <span class="menu-text">Joined</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/Left" class="menu-link">
+                <span class="menu-text">Left</span>
+              </a>
+            </div>
+            </div>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/emp_service_records" class="menu-link">
+                <span class="menu-text">EMP Service Records</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/leave_bucket" class="menu-link">
+                <span class="menu-text">Leave Buckets</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/refunds" class="menu-link">
+                <span class="menu-text">Refunds</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/HrActivity" class="menu-link">
+                <span class="menu-text">HR Activity</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/HrMeeting" class="menu-link">
+                <span class="menu-text">HR Meetings</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a routerLink="/User/DirectorMeeting" class="menu-link">
+                <span class="menu-text">Director Meetings</span>
+              </a>
+            </div>
+  
+          </div>
+        </div>
+        <div class="menu-item">
+          <a routerLink="/User/attendence" class="menu-link">
+            <span class="menu-icon"><i class="fa fa-laptop"></i></span>
+            <span class="menu-text">Attendence</span>
+          </a>
+        </div>
+       
+      </div>
+  
+    </div>
+  
+  </div>
+  

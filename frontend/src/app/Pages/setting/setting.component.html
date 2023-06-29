@@ -1,0 +1,175 @@
+
+    
+    <div id="content" class="app-content">
+        <div class="row pt-5">   
+        <div class="card">
+            <div class="card-body">
+            
+            <ul class="nav nav-tabs">
+            <li class="nav-item me-1"><a href="#office_location" class="nav-link active" data-bs-toggle="tab">Office Locations</a></li>
+            <li class="nav-item me-1"><a href="#financial_year" class="nav-link" data-bs-toggle="tab">Financial Years</a></li>
+            <li class="nav-item me-1"><a href="#head_department" class="nav-link" data-bs-toggle="tab">Head Departments</a></li>
+            <li class="nav-item me-1"><a href="#sub_department" class="nav-link" data-bs-toggle="tab">Sub Departments</a></li>
+            <li class="nav-item me-1"><a href="#designation" class="nav-link" data-bs-toggle="tab">Designations</a></li>
+            <li class="nav-item me-1"><a href="#qualification" class="nav-link" data-bs-toggle="tab">Qualifications</a></li>
+            <li class="nav-item me-1"><a href="#stream" class="nav-link" data-bs-toggle="tab">Streams</a></li>
+            <li class="nav-item me-1"><a href="#packages" class="nav-link" data-bs-toggle="tab">Packages</a></li>
+            <li class="nav-item me-1"><a href="#shift" class="nav-link" data-bs-toggle="tab">Shift & Breaks</a></li>
+            <li class="nav-item me-1"><a href="#vsr_value" class="nav-link" data-bs-toggle="tab">VSR Value</a></li>
+
+            <li class="nav-item me-1"><a href="#ledgers" class="nav-link" data-bs-toggle="tab">Ledgers</a></li>
+            <li class="nav-item me-1"><a href="#batchSize" class="nav-link" data-bs-toggle="tab" (click)="viewBatchSize()">Batch Size</a></li>
+
+            <li class="nav-item me-1"><a href="#trainer" class="nav-link" data-bs-toggle="tab" (click)="viewTrainer()">Trainer</a></li>
+
+        </ul>
+            
+            
+            <div class="tab-content pt-3">
+            
+            <div class="tab-pane fade show active" id="office_location">
+                <div class="col-md-2">
+                    <div class="input-group pt-4" style="width: 200px;display: flex;justify-content: end;">
+                        <input type="search" aria-label="First name" class="form-control" matInput (keyup)="applyFilter($event)" #input placeholder="Search">
+                    </div>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <button type="button" class="btn btn-outline-theme me-2" style="margin-left: 85%;" (click)="openDialog()">Add Location</button>
+                    <div class="row mb-n3">
+                    <div class="small text-inverse text-opacity-50 mb-3"><b class="fw-bold">OFFICE LOCATIONS</b></div>
+                    <table class="table" mat-table [dataSource]="dataSource" matSort>
+                    <thead>
+                    <tr>
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="whiteColor"> ID </th>
+                            <td mat-cell *matCellDef="let row;let i=index" scope="row"class="whiteColor"> {{i+1}}</td>
+                          </ng-container>
+                          <ng-container matColumnDef="office_code">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor"> OFFICE CODE </th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor"> {{row.office_code}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="location">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor"> LOCATION </th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor"> {{row.location}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="address">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor"> ADDRESS </th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor"> {{row.address}} </td>
+                          </ng-container>
+                  
+        
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header class="whiteColor"> Action </th>
+                        <td mat-cell *matCellDef="let row" > 
+                            <i _ngcontent-olo-c1="" class="fa fa-edit ms-auto text-theme fs-16px my-n1"  style="color: aqua !important"  (click)="editLocation(row)"></i>
+                            <i _ngcontent-olo-c1="" class="fa fa-trash ps-2 ms-auto fs-16px my-n1" style="color: red !important" (click)="deleteLocation(row._id)"></i></td> 
+        
+                      </ng-container>
+        
+         <tr mat-header-row *matHeaderRowDef="displayedColumns" style="color: white !important;"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4" class="whiteColor">No data matching the filter "{{input.value}}"</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                 
+                    </tbody>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" class="whiteColor"></mat-paginator>
+        
+                    </div>
+                    
+                
+                    </div>
+                    <div class="card-arrow">
+                    <div class="card-arrow-top-left"></div>
+                    <div class="card-arrow-top-right"></div>
+                    <div class="card-arrow-bottom-left"></div>
+                    <div class="card-arrow-bottom-right"></div>
+                    </div>
+                    <div class="hljs-container">
+                    <pre><code class="xml" data-url="assets/data/table-elements/code-1.json"></code></pre>
+                    </div>
+                    </div>
+
+               
+            </div>
+            
+            <div class="tab-pane fade" id="financial_year">
+        <app-financial-year></app-financial-year>
+        </div>
+            
+        <div class="tab-pane fade" id="head_department">
+            <app-head-department></app-head-department>
+            </div>
+            
+            <div class="tab-pane fade" id="sub_department">
+              <app-sub-department></app-sub-department>
+            </div>
+            <div class="tab-pane fade" id="designation">
+          <app-designations></app-designations>
+            </div>
+            <div class="tab-pane fade" id="qualification">
+               <app-qualification></app-qualification>
+            </div>
+            <div class="tab-pane fade" id="stream">
+             <app-stream></app-stream>
+            </div>
+            <div class="tab-pane fade" id="packages">
+              <app-packages></app-packages>
+            </div>
+            <div class="tab-pane fade" id="shift">
+               <app-shift-break></app-shift-break>
+            </div>
+            <div class="tab-pane fade" id="vsr_value">
+              <app-vsr-value></app-vsr-value>
+            </div>
+            <div class="tab-pane fade" id="ledgers">
+            <app-ledger></app-ledger>
+            </div>
+            
+            <div class="tab-pane fade show active" id="batchSize" hidden>
+             
+<app-batch-size></app-batch-size>
+               
+            </div>
+
+            
+            
+            <div class="tab-pane fade show active" id="trainer" hidden>
+                <app-trainers></app-trainers>
+
+               
+            </div>
+            
+            </div>
+            
+            </div>
+            <div class="card-arrow">
+            <div class="card-arrow-top-left"></div>
+            <div class="card-arrow-top-right"></div>
+            <div class="card-arrow-bottom-left"></div>
+            <div class="card-arrow-bottom-right"></div>
+            </div>
+            <div class="hljs-container">
+            <pre><code class="xml" data-url="assets/data/ui-tabs-accordions/code-1.json"></code></pre>
+            </div>
+            </div>
+  
+
+  
+
+    
+
+
+
+
+      
+   </div>  
+    
+    </div>
+    
+  

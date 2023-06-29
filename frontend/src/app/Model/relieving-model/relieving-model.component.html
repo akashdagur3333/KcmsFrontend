@@ -1,0 +1,129 @@
+<div class="card"  style="background-color: black; overflow-x: hidden;">
+    <h1 class="d-flex justify-content-center pt-3" style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Relieving</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="relievingForm">
+        <div class="row">
+          <div id="SectionHide">
+            <div class="row">
+            <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="rpt_id"> ID</label>
+                  <input disabled="disabled" id="rpt_id" value="RPT{{allData._id}}" class="btn btn-blue span3 disabledColor">
+                </div>
+      
+              </div>
+      
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="emp_type">EMP TYPE</label>
+                  <input disabled="disabled" id="emp_type" value="{{allData.employee_type}}" class="btn btn-blue span3 disabledColor">
+                </div>
+      
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="name">NAME</label>
+                  <input disabled="disabled" id="name" value="{{allData.employee_name}}" class="btn btn-blue span3 disabledColor">
+                </div>
+      
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="father_name">FATHER NAME</label>
+                  <input disabled="disabled" id="father_name" value="{{allData.father_name}}" class="btn btn-blue span3 disabledColor">
+                </div>
+      
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="aadhar_number">AADHAR NUMBER</label>
+                  <input disabled="disabled" id="aadhar_number" value="{{allData.aadhar_number}}" class="btn btn-blue span3 disabledColor">
+                </div>
+      
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="training_start">DATE OF TRAINING (START)</label>
+                  <input disabled="disabled" id="training_start" value="{{allData.inTraining[0].training_start}}"  class="btn btn-blue span3 disabledColor">
+                </div>
+      
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="training_complete">DATE OF TRAINING (Complete)</label>
+                  <input disabled="disabled" id="training_complete" value="{{allData.left[0].training_complete}}" class="btn btn-blue span3 disabledColor">
+                </div>
+              </div>
+            
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="joining_date">DATE OF JOINING</label>
+                  <input disabled="disabled" id="joining_date" value="{{allData.batch_starting_date}}" class="btn btn-blue span3 disabledColor">
+                </div>
+      
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="seperation_date">DATE OF SEPERATION</label>
+                  <input disabled="disabled" id="seperation_date" value="{{allData.left[0].seperation_date}}" class="btn btn-blue span3 disabledColor">
+                </div>
+              </div>
+          
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="left_hr_remarks">LEFT (HR REMARKS)</label>
+                  <input disabled="disabled" id="left_hr_remarks" value="{{allData.left[0].hr_remarks}}" class="btn btn-blue span3 disabledColor">
+                </div>
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="left_type">LEFT TYPE</label>
+                  <input disabled="disabled" id="left_type" value="{{failStatus}}" class="btn btn-blue span3 disabledColor">
+                </div>
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="rejoining">REJOINING POSSIBLE</label>
+                  <input disabled="disabled" id="rejoining" value="{{allData.left[0].rejoining_possible}}" class="btn btn-blue span3 disabledColor">
+                </div>
+              </div>
+            </div>
+              <div class="col-xl-6">
+                <label class="form-label" for="vsr_status">VSR STATUS</label>
+                <select class="form-select form-select-lg mb-3" formControlName="vsr_status" name="vsr_status">
+                    <option disabled selected value="">~Select One~</option>
+                    <option value="Income">Income</option>
+                    <option value="Refunded">Refunded</option>
+                  </select>
+                </div>
+      
+        <div class="col-xl-6">
+        <div class="form-group mb-3">
+        <label class="form-label" for="final_hr_remarks">FINAL HR REMARKS</label>
+        <input type="text" class="form-control" formControlName="final_hr_remarks" name="final_hr_remarks" placeholder="Final HR Remarks">
+        </div>
+        
+        </div>
+
+      </div>
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addRelieving()">Add Relieving</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+            <div class="card-arrow-top-left"></div>
+            <div class="card-arrow-top-right"></div>
+            <div class="card-arrow-bottom-left"></div>
+            <div class="card-arrow-bottom-right"></div>
+          </div>
+          <div class="hljs-container mt-3">
+            <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+          </div>
+        </div>

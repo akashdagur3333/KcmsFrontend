@@ -1,0 +1,65 @@
+<div class="card" style="background-color: black; overflow-x: hidden;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Order</h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+      <form [formGroup]="orderForm">
+        <div class="row">
+                <div class="col-xl-3" id="hidden">
+                    <div class="form-group mb-3">
+                      <label class="form-label" for="clt_id">CLT ID</label>
+                      <input disabled="disabled" id="clt_id" value="CLT{{allData._id}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+                  </div>
+    
+                  <div class="col-xl-3" id="hidden">
+                    <div class="form-group mb-3">
+                      <label class="form-label" for="client_name">Client Name</label>
+                      <input disabled="disabled" id="client_name" value="{{allData.client_name}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+      
+                  </div>
+    
+                  <div class="col-xl-3" id="hidden">
+                    <div class="form-group mb-3">
+                      <label class="form-label" for="client_type">Cust Type</label>
+                      <input disabled="disabled" id="client_type" value="{{allData.client_type}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+      
+                  </div>
+        
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="order_for">Place Order for </label>
+                  <input type="text" class="form-control" formControlName="order_for" name="order_for"
+                    placeholder="Place Order For">
+                </div>
+  
+              </div>
+      
+  
+  
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+          <button type="button" class="btn btn-outline-theme btn-lg" (click)="addOrder()">{{Submit}}</button>
+          <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+  
+        </div>
+      </form>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>
+  

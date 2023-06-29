@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    color: black;
+}
+
+body ul {
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.mainSec {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 30px;
+}
+
+.headingCls {
+    padding-bottom: 12px;
+}
+
+.boxWthBrdr {
+    border: 2px solid black;
+    padding: 20px 10px;
+}
+
+
+.cmpnyLogo img {
+    padding-bottom: 15px;
+    min-width: 100px;
+}
+
+h6.cmpnyName {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}
+
+h6.cmpnyName span {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+h6.cmpyDetails {
+    font-size: 13px;
+    font-weight: 600;
+    padding-top: 3px;
+}
+
+.smltxt {
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 6px;
+}
+
+.cmpnnyLoctn {
+    padding-top: 30px;
+}
+
+.brdrBtm {
+    height: 50%;
+    border-bottom: 2px solid black;
+    margin: 0 -12px;
+}
+
+.cmpnyBrCdeDiv img {
+    max-width: 100%;
+    height: 100%;
+    padding-top: 26px;
+}
+
+.idNumCls {
+    font-size: 13px;
+    padding-top: 18px;
+    padding-bottom: 20px;
+}
+
+.boXNoBrdrRght {}
+
+@media only screen and (max-width: 767px) {
+    .brdrBtm {
+        margin: 0 0px;
+    }
+}
+
+
+
+
+
+.txtClrLgtBlue {
+    color: rgb(14 156 232);
+}
+
+.txtClrDrkBlue {
+    color: rgb(4 132 219);
+}
+
+
+.paddingCls {
+    padding: 20px 0;
+}
+
+.stdntDetlSec .boxWthBrdr {
+    padding: 10px 8px;
+}
+
+.stdntDetlSec h6 {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 0 8px 0;
+}
+.stdntDetlSec p{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
+.paraMainSec {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 20px 25px;
+    font-size: 14px;
+}
+
+.stdntStrt{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.paraMainSec p{
+    font-weight: 400;
+}
+
+h6.cntntHedng {
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 6px;
+    padding-bottom: 12px;
+}
+
+.paraLghtBluTxt{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+small.extraSmal{
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.leftPading{
+    padding-left: 25px;
+}
+
+.pointPara p{
+    line-height: 2;
+    font-size: 14.5;
+}
+
+.pointPara h6{
+    padding-top: 20px;
+    padding-bottom: 12px;
+}
+
+p.listPntsPara{
+    margin-bottom: 0px;
+}
+i.strClr{
+    color: rgb(56 118 29);
+    font-size: 12px;
+    margin-right: 5px;
+}
+.listDiv{
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.listDiv ul{
+    list-style: disc;
+    padding-bottom: 15px;
+}
+.listDiv ul li{
+    line-height: 2;
+}
+.cntntSubHedng{
+    font-size: 13.5px;
+    font-weight: 500;
+}
+.anxrePara{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.anxreSec h6.cntntHedng {
+    font-size: 13px;
+}
+
+.anxreSec p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+
+
+.anxreTable>table,
+.anxreTable>table th,
+.anxreTable>table td {
+    border: 2px solid rgb(0 0 0) !important;
+    border-collapse: collapse;
+}
+
+.anxreTable>table th,
+.anxreTable>table td {
+    padding: 10px 5px;
+}
+
+.anxreTable>table th {
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+}
+
+.anxreTable>table td {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.anxreTable>table td small {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.lghtBlk {
+    color: rgb(31, 31, 31);
+}
+
+table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.anxreTable th,
+.anxreTable td {
+    min-width: 200px;
+}
+
+/* tr, td{
+    border: 2px solid black;
+} */
+
+
+.txtInsideBrdr {
+    border: 2px solid black;
+    padding: 6px 5px;
+    margin-top: 80px;
+}
+
+.salryTable>table,
+.salryTable>table>th,
+.salryTable>table>td {
+    border: 2px solid rgb(0 0 0) !important;
+    border-collapse: collapse;
+}
+
+.salryTable>table th,
+.salryTable>table td {
+    border: 2px solid rgb(39, 39, 39);
+    border-collapse: collapse;
+}
+
+.noBrdrLeft {
+    border-left: 0px !important;
+}
+
+.noBrdrRght {
+    border-right: 0px !important;
+}
+
+.noBrdrBtm {
+    border-bottom: 0px !important;
+}
+
+.noBrdrTop {
+    border-top: 0px !important;
+}
+
+.salryTable .slryTbleMainHed {
+    padding: 10px 5px;
+}
+
+.slryInrTble th,
+.slryInrTble td {
+    padding: 10px 2px !important;
+}
+
+
+.salryTable th {
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+
+.salryTable td {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.slryInrTble>thead td {
+    color: black;
+}
+
+.padingTop {
+    padding-top: 10px;
+}
+
+.marnTop {
+    margin-top: 10px;
+}
+
+.HightPaddingTop {
+    padding-top: 20px;
+}
+
+.salryTable th,
+.salryTable td {
+    min-width: 105px;
+}
+
+.tbleTxtClr {
+    color: rgb(1 112 192);
+}
+
+.bluTxtPara{
+    font-size: 13px;
+    font-weight: 500;
+    padding: 20px 0 60px 0;
+}
+
+.btmParaCls p{
+    font-size: 14.2px;
+    font-weight: 400;
+}
+.smalTxtDiv{
+    font-size: 12px;
+    padding: 8px 0 26px 0;
+}
+.cmpnyCnfdtDiv{
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 0 30px 0;
+}
+
+
+.btmBoxes h6{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0px 0 0px 0;
+}
+.btmBoxes p{
+    font-size: 14px;
+    font-weight: 500;
+}
+small.paraaSmal{
+    font-size: 11px;
+    font-weight: 500;
+}
+.adhrNoDiv{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.underSidnDiv img {
+    width: 50%;
+}
+
+.greenTxtDiv{
+    color: rgb(0 176 80);
+    padding-top: 50px;
+}
+
+small.greenTxtPara,
+p.greenTxtPara{
+    font-weight: 500;
+}
+
+.brdrBoxPdngCls{
+    /* padding-left: 10px;
+    padding-right: 10px; */
+}
+
+
+.dspFlxCls{
+    display: flex;
+}
+
+.boxWthBrdr{
+    width: 100%;
+    max-width: 100%;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+@media only screen and (max-width: 991px) {
+    .mainSec {
+        padding: 80px 20px;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .mainSec {
+        padding: 60px 12px;
+    }
+    .paraMainSec {
+        padding: 20px 10px;
+    }
+    .leftPading{
+        padding-left: 10px;
+    }
+}
+
+@media only screen and (max-width:575px) {
+    .dspFlxCls{
+        flex-direction: column;
+    }
+}

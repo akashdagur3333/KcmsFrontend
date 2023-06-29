@@ -1,0 +1,169 @@
+<div class="card" style="background-color: black; overflow-x: hidden;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Authority</h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+      <form [formGroup]="refundForm">
+        <div class="row">
+          <div id="SectionHide">
+            <div class="row">
+                <div class="col-xl-3">
+                    <div class="form-group mb-3">
+                      <label class="form-label" for="rfd_id">RFD ID</label>
+                      <input disabled="disabled" id="rfd_id" value="RFD{{allData._id}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+      
+                  </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="rpt_id">RPT ID</label>
+                  <input disabled="disabled" id="rpt_id" value="RPT{{allData.rpt_id}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+  
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="emp_type">EMP TYPE</label>
+                  <input disabled="disabled" id="emp_type" value="{{allData.emp_type}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+  
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="offer_letter">OFFER LETTER ID</label>
+                  <input disabled="disabled" id="offer_letter" value="{{allData.offer_letter_id}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="name">NAME</label>
+                  <input disabled="disabled" id="name" value="{{allData.name}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="father_name">FATHER NAME</label>
+                  <input disabled="disabled" id="father_name" value="{{allData.father_name}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="aadhar_number">AADHAR NUMBER</label>
+                  <input disabled="disabled" id="aadhar_number" value="{{allData.aadhar_number}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="reporting_date">REPORTING DATE</label>
+                  <input disabled="disabled" id="reporting_date" value="{{allData.reporting_date}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="total_value">TOTAL VALUE</label>
+                  <input disabled="disabled" id="total_value" value="{{allData.total_value}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+              </div>
+  
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="pending_value">PENDING VALUE</label>
+                  <input disabled="disabled" id="pending_value" value="{{allData.pending_value}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="refund_value">REFUND VALUE</label>
+                  <input disabled="disabled" id="refund_value" value="{{allData.refund_value}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+              </div>
+  
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="state_reason">STATE REASON</label>
+                  <input disabled="disabled" id="state_reason" value="{{allData.state_reason}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+              </div>
+  
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="which_policy">UNDER WHICH POLICY</label>
+                  <input disabled="disabled" id="which_policy" value="{{allData.which_policy}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+              </div>
+
+  
+            </div>
+        <div class="row">
+            <div class="col-xl-4">
+                <label class="form-label" for="director_consent">DIRECTOR CONSENT</label>
+                <select class="form-select form-select-lg mb-3" formControlName="director_consent" name="director_consent">
+                  <option disabled selected value="">~Select One~</option>
+                  <option value="Under Review">Under Review</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Processing">Processing</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+              </div>
+              <div class="col-xl-4">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="approx_date">APPROX DATE(CLOSING)</label>
+                  <input type="date" class="form-control" formControlName="approx_date" name="approx_date"
+                    placeholder="Approx Date">
+                </div>
+  
+              </div>
+              <div class="col-xl-4">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="remarks">DIRECTOR REMARKS</label>
+                  <input type="text" class="form-control" formControlName="remarks" name="remarks"
+                    placeholder="Director Remarks">
+                </div>
+  
+              </div>
+        </div>
+  
+  
+          </div>
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+          <button type="button" class="btn btn-outline-theme btn-lg" (click)="addRefund()">Add Authority</button>
+          <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+  
+        </div>
+      </form>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>
+  

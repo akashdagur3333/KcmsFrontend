@@ -1,0 +1,98 @@
+
+<div class="col-md-2">
+    <div class="input-group pt-4" style="width: 200px;display: flex;justify-content: end;">
+        <input type="search" aria-label="First name" class="form-control" matInput (keyup)="applyFilter($event)" #input placeholder="Search">
+    </div>
+</div>
+<div class="card mt-5">
+    <div class="card-body">
+    <div class="row mb-n3 table-responsive">
+    <div class="small text-inverse text-opacity-50 mb-3"><b class="fw-bold">PANEL COLLEGES</b></div>
+    <table class="table" mat-table [dataSource]="dataSource" matSort>
+    <thead>
+    <tr>
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="whiteColor tableText"> ID </th>
+            <td mat-cell *matCellDef="let row;let i=index" scope="row"class="whiteColor tableText"> {{i+1}}</td>
+          </ng-container>
+          <ng-container matColumnDef="college_id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">COLLEGE ID </th>
+            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> CLG{{row._id}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="college_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">COLLEGE NAME</th>
+            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.college_name}} </td>
+          </ng-container>
+          <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">CITY </th>
+            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.college_city}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">STATE</th>
+            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.college_state}} </td>
+          </ng-container>
+          <ng-container matColumnDef="pin_code">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">PIN CODE </th>
+            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.college_pin_code}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">TYPE</th>
+            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.college_type}} </td>
+          </ng-container>
+          <ng-container matColumnDef="tnp_head">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">TNP HEAD </th>
+            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText">Name:{{row.tnp_head_name}} <br>
+                Mobile:{{row.tnp_head_contact}} <br>
+                Email:{{row.tnp_head_email}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">DATE</th>
+            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.created_at}} </td>
+          </ng-container>
+
+  
+          <ng-container matColumnDef="add">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="whiteColor tableText"> ADD </th>
+        <td mat-cell *matCellDef="let row" > 
+            <i _ngcontent-olo-c1="" class="fa-solid fa-square-plus ps-2 ms-auto fs-16px my-n1" (click)="openDrive(row)" style="color: aqua;"></i></td>                     
+      </ng-container>
+  
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="whiteColor tableText"> ACTION </th>
+        <td mat-cell *matCellDef="let row" > 
+            <i _ngcontent-olo-c1="" class="fa fa-edit ms-auto text-theme fs-16px my-n1" (click)="editColleges(row)"></i>
+            <i _ngcontent-olo-c1="" class="fa fa-trash ps-2 ms-auto fs-16px my-n1" style="color: red;" (click)="deleteColleges(row._id)"></i></td>        
+      </ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns" style="color: white !important;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4" class="whiteColor tableText">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </thead>
+    <tbody>
+ 
+    </tbody>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" class="whiteColor tableText"></mat-paginator>
+
+    </div>
+    
+
+    </div>
+    <div class="card-arrow">
+    <div class="card-arrow-top-left"></div>
+    <div class="card-arrow-top-right"></div>
+    <div class="card-arrow-bottom-left"></div>
+    <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container">
+    <pre><code class="xml" data-url="assets/data/table-elements/code-1.json"></code></pre>
+    </div>
+    </div>
+

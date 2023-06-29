@@ -1,0 +1,305 @@
+<div class="card" style="background-color: black; overflow-x: hidden;">
+  <h1 class="d-flex justify-content-center pt-3"
+    style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add In-Training</h1>
+  <div class="hljs-container pb-0">
+    <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+  </div>
+  <div class="card-body pb-2">
+    <form [formGroup]="inTrainingForm">
+      <div class="row">
+        <!-- <div class="col-xl-6">
+                <label class="form-label" for="head_department">Head Department</label>
+                <select class="form-select form-select-lg mb-3" formControlName="head_department" name="head_department">
+                    <option *ngFor="let dep of allDepartment" value="{{dep.name}}">{{dep.name}}</option>
+                    <option value="In Campus">In Campus</option>
+                    <option value="Job Fair">Job Fair</option>
+         
+                  </select>
+                </div> -->
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="designation">RPT ID</label>
+            <input disabled="disabled" value="RPT{{data._id}}" class="btn btn-blue span3 disabledColor">
+          </div>
+
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="designation">EMP TYPE</label>
+            <input disabled="disabled" value="{{data.employee_type}}" class="btn btn-blue span3 disabledColor">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="designation">ANY DUES</label>
+            <input disabled="disabled" value="{{data.pending_value}}"  class="btn btn-blue span3 disabledColor">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="designation">REPORTING DATE</label>
+            <input disabled="disabled" value="{{data.offer_letter_date}}"  class="btn btn-blue span3 disabledColor">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="designation">OFFER LETTER SERIAL</label>
+            <input disabled="disabled" value="{{data.offer_letter_account}}"  class="btn btn-blue span3 disabledColor">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="designation">DOJ(AS PER OL)</label>
+            <input disabled="disabled" value="{{data.offer_letter_date}}"  class="btn btn-blue span3 disabledColor">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="designation">BATCH ID</label>
+            <input disabled="disabled" value="BTH{{data.select_batch[0]._id}}"  class="btn btn-blue span3 disabledColor">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="designation">BATCH TYPE</label>
+            <input disabled="disabled" value="{{data.select_batch[0].batch_type}}" class="btn btn-blue span3 disabledColor">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="batch_start">BATCH (STARTING DATE)</label>
+            <input type="date" class="form-control" formControlName="batch_start" name="batch_start" placeholder="Batch Starting Date">
+          </div>
+
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="training_start">TRAINING (STARTING DATE)</label>
+            <input type="date" class="form-control" formControlName="training_start" name="training_start" placeholder="Training Starting Date">
+          </div>
+        </div>
+
+        <h3>Additional Information</h3>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="address">ADDRESS(TEMPORARY)</label>
+            <input type="text" class="form-control" formControlName="address" name="address" placeholder="Address (Temporary)">
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="pan_card">PAN CARD</label>
+            <input type="text" class="form-control" formControlName="pan_card" name="pan_card" placeholder="Pan Card">
+          </div>
+        </div>
+        <h3>PERSON TO BE CONTACT IN CASE OF EMERGENCY</h3>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="name">NAME OF PERSON</label>
+            <input type="text" class="form-control" formControlName="name" name="name" placeholder="Name Of Person">
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="contact_number">CONTACT NUMBER</label>
+            <input type="number" class="form-control" formControlName="contact_number" name="contact_number" placeholder="Contact Number">
+          </div>
+        </div>
+
+        <div class="col-xl-3">
+          <label class="form-label" for="relation">RELATION</label>
+          <select class="form-select form-select-lg mb-3" formControlName="relation" name="relation">
+            <option disabled selected value="">~ Choose One ~</option>
+            <option value="FATHER">Father</option>
+            <option value="MOTHER">Mother</option>
+            <option value="BROTHER">Brother</option>
+            <option value="SISTER">Sister</option>
+            <option value="WIFE">Wife</option>
+            <option value="HUSBAND">Husband</option>
+            <option value="OTHER RELATIVE">Other Relative</option>
+          </select>
+        </div>
+        <h3>BANKING DETAILS</h3>
+        <div class="col-xl-3">
+          <label class="form-label" for="bank_name">BANK NAME</label>
+          <select class="form-select form-select-lg mb-3" formControlName="bank_name" name="bank_name">
+            <option value="">~ Choose One ~</option>
+            <option value="Au Small Finance Bank Limited">Au Small Finance Bank Limited</option>
+            <option value="Axis Bank Ltd.">Axis Bank Ltd.</option>
+            <option value="Bank of Baroda">Bank of Baroda</option>
+            <option value="Bank of India">Bank of India</option>
+            <option value="Bank of Nova Scotia">Bank of Nova Scotia</option>
+            <option value="Bank of America">Bank of America</option>
+            <option value="Bank of Maharastra">Bank of Maharastra</option>
+            <option value="Bandhan Bank Ltd.">Bandhan Bank Ltd.</option>
+            <option value="Canara Bank">Canara Bank</option>
+            <option value="Central Bank of India">Central Bank of India</option>
+            <option value="CSB Bank Ltd.">CSB Bank Ltd.</option>
+            <option value="Citi Bank">Citi Bank</option>
+            <option value="City Union Bank Ltd.">City Union Bank Ltd.</option>
+            <option value="Capital Small Finance Bank Limited">Capital Small Finance Bank Limited</option>
+            <option value="DCB Bank Ltd.">DCB Bank Ltd.</option>
+            <option value="DBS Bank India Limited">DBS Bank India Limited</option>
+            <option value="Dhanlaxmi Bank Ltd.">Dhanlaxmi Bank Ltd.</option>
+            <option value="Deutsche Bank">Deutsche Bank</option>
+            <option value="Doha Bank">Doha Bank</option>
+            <option value="Equitas Small Finance Bank Limited">Equitas Small Finance Bank Limited</option>
+            <option value="Emirates Bank NBD">Emirates Bank NBD</option>
+            <option value="Federal Bank Ltd.">Federal Bank Ltd.</option>
+            <option value="Fino Payments Bank Limited">Fino Payments Bank Limited</option>
+            <option value="HDFC Bank Ltd.">HDFC Bank Ltd.</option>
+            <option value="HSBC Ltd.">HSBC Ltd.</option>
+            <option value="Himachal Pradesh Gramin Bank">Himachal Pradesh Gramin Bank</option>
+            <option value="ICICI Bank Ltd.">ICICI Bank Ltd.</option>
+            <option value="Indian Bank">Indian Bank</option>
+            <option value="Indian Overseas Bank">Indian Overseas Bank</option>
+            <option value="Induslnd Bank Ltd.">Induslnd Bank Ltd.</option>
+            <option value="IDFC First Bank Ltd.">IDFC First Bank Ltd.</option>
+            <option value="IDBI Bank Ltd.">IDBI Bank Ltd.</option>
+            <option value="India Post Payments Bank Limited">India Post Payments Bank Limited</option>
+            <option value="Jammu &amp; Kashmir Bank Ltd.">Jammu &amp; Kashmir Bank Ltd.</option>
+            <option value="Jana Small Finance Bank Limited">Jana Small Finance Bank Limited</option>
+            <option value="Karnataka Bank Ltd.">Karnataka Bank Ltd.</option>
+            <option value="Karur Vysya Bank Ltd.">Karur Vysya Bank Ltd.</option>
+            <option value="Kotak Mahindra Bank Ltd.">Kotak Mahindra Bank Ltd.</option>
+            <option value="Lakshmi Vilas Bank Ltd.">Lakshmi Vilas Bank Ltd.</option>
+            <option value="Maharashtra Gramin Bank">Maharashtra Gramin Bank</option>
+            <option value="Nainital Bank Ltd.">Nainital Bank Ltd.</option>
+            <option value="North East Small Finance Bank Limited">North East Small Finance Bank Limited</option>
+            <option value="Paytm Payments Bank Limited">Paytm Payments Bank Limited</option>
+            <option value="Punjab &amp; Sind Bank">Punjab &amp; Sind Bank</option>
+            <option value="Punjab National Bank">Punjab National Bank</option>
+            <option value="Punjab Gramin Bank">Punjab Gramin Bank</option>
+            <option value="RBL Bank Ltd.">RBL Bank Ltd.</option>
+            <option value="State Bank of India">State Bank of India</option>
+            <option value="Standard Chartered Bank">Standard Chartered Bank</option>
+            <option value="South Indian Bank Ltd.">South Indian Bank Ltd.</option>
+            <option value="Suryoday Small Finance Bank Limited">Suryoday Small Finance Bank Limited</option>
+            <option value="Shivalik Small Finance Bank Limited">Shivalik Small Finance Bank Limited</option>
+            <option value="Tamilnad Mercantile Bank Ltd.">Tamilnad Mercantile Bank Ltd.</option>
+            <option value="UCO Bank">UCO Bank</option>
+            <option value="Union Bank of India">Union Bank of India</option>
+            <option value="Uttarakhand Gramin Bank">Uttarakhand Gramin Bank</option>
+            <option value="YES Bank Ltd.">YES Bank Ltd.</option>
+          </select>
+        </div>
+
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="ac_name">AC HOLDER NAME</label>
+            <input type="text" class="form-control" formControlName="ac_name" name="ac_name" placeholder="AC Holder Name">
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="ac_number">AC NUMBER</label>
+            <input type="text" class="form-control" formControlName="ac_number" name="ac_number" placeholder="AC Number">
+          </div>
+        </div>
+
+        <div class="col-xl-3">
+          <label class="form-label" for="ac_type">AC TYPE</label>
+          <select class="form-select form-select-lg mb-3" formControlName="ac_type" name="ac_type">
+            <option value="Saving">Saving</option>
+            <option value="Current">Current</option>
+
+          </select>
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="ifsc_code">IFSC CODE</label>
+            <input type="text" class="form-control" formControlName="ifsc_code" name="ifsc_code" placeholder="IFSC Code">
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="micr_code">MICR CODE</label>
+            <input type="text" class="form-control" formControlName="micr_code" name="micr_code" placeholder="MICR Code">
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="esic_number">ESIC NUMBER</label>
+            <input type="text" class="form-control" formControlName="esic_number" name="esic_number" placeholder="ESIC Number">
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="epfo_number">EPFO NUMBER</label>
+            <input type="text" class="form-control" formControlName="epfo_number" name="epfo_number" placeholder="EPFO Number">
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="uan_number">UAN NUMBER</label>
+            <input type="text" class="form-control" formControlName="uan_number" name="uan_number" placeholder="UAN Number">
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="form-group mb-3">
+            <label class="form-label" for="hr_remarks">HR REMARKS</label>
+            <input type="text" class="form-control" formControlName="hr_remarks" name="hr_remarks" placeholder="HR Remarks">
+          </div>
+        </div>
+<div class="p-3">
+        <h3>DOCS RECORD</h3>
+        <div>
+          <table class="table-responsive">
+            <tr class="table-outline-theme">
+              <th class="tableText">SR.NO</th>
+              <th class="tableText">DOCUMENT NAME</th>
+              <th class="tableText">ATTACH FILE</th>
+              <th class="tableText">FILE STATUS</th>
+              <th class="tableText">DEADLINE</th>
+              <th class="tableText">FILE VIEW</th>
+              <th class="tableText">HR REMARK</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+              <td>Alfreds Futterkiste</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+              <td>Alfreds Futterkiste</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      </div>
+      <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addIntraining()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+      </div>
+    </form>
+  </div>
+  <div class="card-arrow">
+    <div class="card-arrow-top-left"></div>
+    <div class="card-arrow-top-right"></div>
+    <div class="card-arrow-bottom-left"></div>
+    <div class="card-arrow-bottom-right"></div>
+  </div>
+  <div class="hljs-container mt-3">
+    <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+  </div>
+</div>

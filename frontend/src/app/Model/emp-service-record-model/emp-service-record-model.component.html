@@ -1,0 +1,167 @@
+<div class="card" style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">REPORTING</h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+     
+        <div class="card-body" style="background: #000;"> 
+												    
+            <div class="col-sm-2 col-xs-12">
+                <label class="control-label mb-10 text-left"><b>Employee Personal Details:</b></label>
+            </div><br>
+            <input type="hidden" id="reprpt" value="{{ReportingData._id}}">
+        <div class="row">    
+            <div class="col-md col-xs-12">
+                Employee Name*: <p id="viewname"> {{ReportingData.employee_name}}</p><br>
+                Select Gender*: <p id="viewgender">{{ReportingData.gender}}</p><br>
+                Personal Email*: <p id="viewemail">{{ReportingData.email}}</p><br>
+                
+            </div>
+            <div class="col-md col-xs-12">
+                Father Name*: <p id="viewfathername">{{ReportingData.father_name}}</p><br>
+                Select Marital Status*: <p id="viewmaritalstatus">{{ReportingData.maritial_status}}</p><br>
+                Contact Number*: <p id="viewcontact">{{ReportingData.contact_no1}}</p><br>
+            </div>
+            
+            <div class="col-md col-xs-12">
+                Mother Name*: <p id="viewmothername">{{ReportingData.mother_name}}</p><br>
+                Select Blood Group*: <p id="viewbloodgroup">{{ReportingData.blood_group}}</p><br>
+                Alternate Contact Number*: <p id="viewaltcontact">{{ReportingData.contact_no2}}</p><br>
+            </div>
+            
+            <div class="col-md col-xs-12">
+                Address (Parmanent)*: <p id="viewpaddress">{{ReportingData.address}}</p><br>
+                Date Of Birth*: <p id="viewdob">{{ReportingData.dob}}</p><br>
+                
+            </div>
+            <div class="col-sm-2 col-xs-12">
+                Address (Temporary): <p id="viewtaddress"></p><br>
+                Date Of Anniversary: <p id="viewdoa"></p><br>
+            </div>
+        </div>		
+            
+        
+            <div class="col-sm-12 col-xs-12">
+                <label class="control-label mb-10 text-left"><b>Employee Add-on Details:</b></label>
+            </div><br>
+        <div class="row">
+            <div class="col-md col-xs-12">
+                College Name*: <p id="viewcollegename">{{ReportingData.college_name}}</p><br>
+                Aadhar Number*: <p id="viewaadharid">{{ReportingData.aadhar_number}}</p><br>
+            </div>
+            <div class="col-md col-xs-12">
+                College City*: <p id="viewcollegecity">{{ReportingData.college_city}}</p><br>
+                Pan Card: <p id="viewpanid"></p><br>
+            </div>
+            <div class="col-md col-xs-12">
+                Qualification*: <p id="viewqualification">{{ReportingData.qualification}}</p><br>
+            </div>
+            <div class="col-md col-xs-12">
+                Stream*: <p id="viewstream">{{ReportingData.stream}}</p><br>
+            </div>
+            <div class="col-md col-xs-12">
+                Personal Identity Mark*: <p id="viewpim">{{ReportingData.identity_mark}}</p><br>
+            </div>
+        </div>	
+            <div class="col-sm-12 col-xs-12">
+                <label class="control-label mb-10 text-left"><b>Employmant Details:</b></label>
+            </div><br>
+         <div class="row">  
+            <div class="col-md col-xs-12">
+                Financial Year*: <p id="viewfinancialy">{{ReportingData.financial_year}}</p><br>
+                Designation*: <p id="viewdesig">{{ReportingData.designation}}</p><br>
+                BAND*: <p id="viewband">{{ReportingData.band}}</p><br>
+            </div>
+            
+            <div class="col-md col-xs-12">
+                Reporting Date*: <p id="viewreportingdate">{{ReportingData.offer_letter_date}}</p><br>
+                Batch Serial*: <p id="viewbatchserial">{{ReportingData.select_batch[0].batch_name}}</p><br>
+                Reported By*: <p id="viewreportedby">{{ReportingData.created_by}}</p><br>
+            </div>
+            
+            <div class="col-md col-xs-12">
+                Offer Letter Serial*: <p id="viewofferletterac">{{ReportingData.offer_letter_account}}</p><br>
+                Reported At*: <p id="viewreportat">{{ReportingData.reported_at}}</p><br>
+                Training Start Date*:<p id="trnstrdate">{{ReportingData.joined[0].training_start}}</p><br>
+            </div>
+            
+            <div class="col-md col-xs-12">
+                Offer Letter Issue Date*: <p id="viewolid">{{ReportingData.offer_letter_date}}</p><br>
+                Date Of Joining (As Per OL)*: <p id="viewdojapol">{{ReportingData.joined[0].joining_date}}</p><br>
+                Training End Date*:<p id="trnenddate">{{ReportingData.joined[0].training_complete}}</p><br>
+            </div>
+            
+            <div class="col-md col-xs-12">
+                Employee Type*: <p id="viewtype">{{ReportingData.employee_type}}</p><br>
+                Total VSR*: <p id="viewtotalvsr">{{ReportingData.total_vsr}}</p><br>
+                Salary Given Till Date*:<p id="slarytilldate"></p><br>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xs-12">
+                <label class="control-label mb-10 text-left"><b>Employee Salary Details:</b></label>
+        </div><br>
+        <div class="row">
+            <select style="background:transparent; color:#fff; border-radius:10px; font-size:1em;border: 2px #973835 solid;width:11%;" id="hrtarget">
+                <option style=" color:#000;" value="">~ Select FY ~</option>
+                <option style=" color:#000;" value="2020-21">2020-21</option><option style=" color:#000;" value="2021-22">2021-22</option><option style=" color:#000;" value="2022-23">2022-23</option><option style=" color:#000;" value="2023-24">2023-24</option>                                    			        <!--<option style=" color:#000;">20-21</option>-->
+            </select>
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div id="example3_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dt-buttons btn-group">      <button class="btn btn-light buttons-copy buttons-html5" tabindex="0" aria-controls="example3" type="button"><span>Copy</span></button> <button class="btn btn-light buttons-excel buttons-html5" tabindex="0" aria-controls="example3" type="button"><span>Excel</span></button> <button class="btn btn-light buttons-pdf buttons-html5" tabindex="0" aria-controls="example3" type="button"><span>PDF</span></button> <button class="btn btn-light buttons-print" tabindex="0" aria-controls="example3" type="button"><span>Print</span></button> </div></div><div class="col-sm-12 col-md-6"><div id="example3_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example3"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="example3" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="example3_info">
+                        <thead>
+                                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-sort="ascending" aria-label="ID: activate to sort column descending" style="width: 0px;">ID</th><th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="MONTH: activate to sort column ascending" style="width: 0px;">MONTH</th><th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="ATTENDANCE: activate to sort column ascending" style="width: 0px;">ATTENDANCE</th><th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="AMOUNT: activate to sort column ascending" style="width: 0px;">AMOUNT</th></tr>
+                            </thead>
+                            <tbody id="totalsalary">
+                                
+                            <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">No data available in table</td></tr></tbody>
+                        
+                        </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example3_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example3_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example3_previous"><a href="#" aria-controls="example3" data-dt-idx="0" tabindex="0" class="page-link">Prev</a></li><li class="paginate_button page-item next disabled" id="example3_next"><a href="#" aria-controls="example3" data-dt-idx="1" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xs-12">
+            <label class="control-label mb-10 text-left"><b>Employee Attendance Details:</b></label>
+        </div><br>
+        <div class="row">
+            <div class="col">
+                <button onclick="loadattendance(this)" class="btn btn-secondary px-5 radius-30">View Attendance</button>
+            </div>
+        </div><br><br>
+        <div class="row">  
+            <div class="col-md col-xs-12">
+                Bucket Leave*: <p id="buck">3</p><br>
+            </div>
+            
+            <div class="col-md col-xs-12">
+                Earned Leave*: <p id="eleav">0</p><br>
+            </div>
+            
+            <div class="col-md col-xs-12">
+                Medical Leave*: <p id="mleav">0</p><br>
+            </div>
+            
+            <div class="col-md col-xs-12">
+                Unpaid Leave*: <p id="uleav">0</p><br>
+            </div>
+            
+            <div class="col-md col-xs-12">
+                Remaining Bucket Leave*: <p id="rbuckleav">3</p><br>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>
+  

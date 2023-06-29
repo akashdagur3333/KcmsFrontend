@@ -1,0 +1,47 @@
+<div class="card"  style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3" style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Sub Department</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="subDepartmentForm">
+        <div class="row">
+       
+        <div class="col-xl-6">
+            <label class="form-label" for="head_department">Head Department</label>
+            <select class="form-select form-select-lg mb-3" formControlName="head_department" name="head_department">
+                <option disabled selected value="">~select One~</option>
+                <option *ngFor="let dep of allDepartment" value="{{dep.name}}">{{dep.name}}</option>
+                <!-- <option value="Virtual Placement">Virtual Placement</option>
+                <option value="In Campus">In Campus</option>
+                <option value="Job Fair">Job Fair</option> -->
+     
+              </select>
+            </div>
+            <div class="col-xl-6">
+                <div class="form-group mb-3">
+                <label class="form-label" for="Sub_department">Sub Department</label>
+                <input type="text" class="form-control" formControlName="Sub_department" name="Sub_department" placeholder="Sub Department">
+                </div>
+                
+                </div>
+
+      
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addSubdepartment()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+        <div class="card-arrow-top-left"></div>
+        <div class="card-arrow-top-right"></div>
+        <div class="card-arrow-bottom-left"></div>
+        <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container mt-3">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        </div>

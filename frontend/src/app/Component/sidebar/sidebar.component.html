@@ -1,0 +1,594 @@
+<div id="sidebar" class="app-sidebar" style="overflow-y: scroll !important;border-right: 1px solid grey;">
+
+  <div class="app-sidebar-content">
+
+    <div class="menu">
+      <div class="menu-header">CENTRAL MANAGEMENT</div>
+      <!-- <div class="menu-item active">
+        <a routerLink="/Admin/home" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-house"></i></span>
+          <span class="menu-text">Home</span>
+        </a>
+      </div> -->
+      <div class="menu-item">
+        <a class="menu-link" routerLink="/Admin/user">
+          <span class="menu-icon"><i class="fa fa-bar-chart"></i></span>
+          <span class="menu-text">Users</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a routerLink="/Admin/setting" class="menu-link">
+          <span class="menu-icon"><i class="fa fa-gear"></i></span>
+          <span class="menu-text">Settings</span>
+        </a>
+      </div>
+      <hr>
+      <div class="menu-item has-sub inactive" id="hrm">
+        <a class="menu-link" (click)="hrOpen()">
+          <span class="menu-icon">
+            <i class="fa fa-envelope"></i>
+          </span>
+          <span class="menu-text">HR Management</span>
+          <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+        </a>
+        <div class="menu-submenu" id="hrdata">
+         
+          <div class="menu-item">
+            <a routerLink="/Admin/trainingBatches" id="training_batches" (click)="openhrm('training_batches')" class="menu-link">
+              <span class="menu-text">Training Batches</span>
+            </a>
+          </div>
+          <div class="menu-item has-sub inactive" id="hrm1">
+            <a (click)="openplacement()"class="menu-link">
+           
+              <span class="menu-text">Placements</span>
+              <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+            </a>
+            <div class="menu-submenu">
+          <div class="menu-item">
+            <a routerLink="/Admin/colleges" class="menu-link">
+              <span class="menu-text">Colleges</span>
+            </a>
+          </div>
+          <div class="menu-item" >
+            <a routerLink="/Admin/drive" class="menu-link">
+              <span class="menu-text">Drives</span>
+            </a>
+          </div>
+          <div class="menu-item" >
+            <a routerLink="/Admin/student" class="menu-link">
+              <span class="menu-text">Students</span>
+            </a>
+          </div>
+         
+          </div>
+          </div>
+          <div class="menu-item has-sub inactive" id="hrm2">
+            <a (click)="openReporting()" class="menu-link">
+           
+              <span class="menu-text">Reportings</span>
+              <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+            </a>
+            <div class="menu-submenu">
+          <div class="menu-item">
+            <a routerLink="/Admin/reporting" class="menu-link">
+              <span class="menu-text">Reportings</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/reciept" class="menu-link">
+              <span class="menu-text">Receipts</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/fine" class="menu-link">
+              <span class="menu-text">Fine</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/otherCharges" class="menu-link">
+              <span class="menu-text">Other Charges</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/fineWaiver" class="menu-link">
+              <span class="menu-text">Fine (Waiver)</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/VSRWaiver" class="menu-link">
+              <span class="menu-text">VSR (Waiver)</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/otherWaiver" class="menu-link">
+              <span class="menu-text">Other (Waiver)</span>
+            </a>
+          </div>
+          </div>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/trainings" class="menu-link">
+              <span class="menu-text">Trainings</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/testQuestions" class="menu-link">
+              <span class="menu-text">Test Questions</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/trainingTests" class="menu-link">
+              <span class="menu-text">Training Tests</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/joinings" class="menu-link">
+              <span class="menu-text">Joinings</span>
+            </a>
+          </div>
+          <div class="menu-item has-sub inactive" id="hrm3">
+            <a (click)="openEmpStatus()" class="menu-link">
+           
+              <span class="menu-text">EMP Status</span>
+              <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+            </a>
+            <div class="menu-submenu">
+          <div class="menu-item">
+            <a routerLink="/Admin/jobStatus" class="menu-link">
+              <span class="menu-text">Job Status</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/awaited" class="menu-link">
+              <span class="menu-text">Awaited</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/InTraining" class="menu-link">
+              <span class="menu-text">In Training</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/TrainingCompleted" class="menu-link">
+              <span class="menu-text">Training Completed</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/Joined" class="menu-link">
+              <span class="menu-text">Joined</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/Left" class="menu-link">
+              <span class="menu-text">Left</span>
+            </a>
+          </div>
+          </div>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/emp_service_records" class="menu-link">
+              <span class="menu-text">EMP Service Records</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/leave_bucket" class="menu-link">
+              <span class="menu-text">Leave Buckets</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/refunds" class="menu-link">
+              <span class="menu-text">Refunds</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/HrActivity" class="menu-link">
+              <span class="menu-text">HR Activity</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/HrMeeting" class="menu-link">
+              <span class="menu-text">HR Meetings</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/DirectorMeeting" class="menu-link">
+              <span class="menu-text">Director Meetings</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/SystemAttendence" class="menu-link">
+              <span class="menu-text">System Attendence</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+      <div class="menu-item has-sub inactive" id="client">
+        <a class="menu-link" (click)="clientOpen()">
+          <span class="menu-icon">
+            <i class="fa fa-envelope"></i>
+          </span>
+          <span class="menu-text">Client Management</span>
+          <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+        </a>
+        <div class="menu-submenu">
+         
+          <div class="menu-item">
+            <a routerLink="/Admin/Client" class="menu-link">
+              <span class="menu-text">Client</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/Order" class="menu-link">
+              <span class="menu-text">Order</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/Invoice" class="menu-link">
+              <span class="menu-text">Invoice</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="menu-item has-sub inactive" id="tech">
+        <a class="menu-link" (click)="techOpen()">
+          <span class="menu-icon">
+            <i class="fa fa-envelope"></i>
+          </span>
+          <span class="menu-text">Tech Management</span>
+          <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+        </a>
+        <div class="menu-submenu">
+         
+          <div class="menu-item">
+            <a routerLink="/Admin/EmpPerformance" class="menu-link">
+              <span class="menu-text">Emp Performance</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/Team" class="menu-link">
+              <span class="menu-text">Teams</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/TotalProject" class="menu-link">
+              <span class="menu-text">Total Projects</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/TotalAssignment" id="totalassignment" class="menu-link">
+              <span class="menu-text">Total Assignments</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/TotalTask" class="menu-link">
+              <span class="menu-text">Total Tasks</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/AssignedTask" id="assign" class="menu-link">
+              <span class="menu-text">Assigned Tasks</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/CompletedTask" id="complete" class="menu-link">
+              <span class="menu-text">Completed Tasks</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a routerLink="/Admin/FailedTask" id="fail" class="menu-link">
+              <span class="menu-text">Failed Tasks</span>
+            </a>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- <div class="menu-header">Components</div>
+      <div class="menu-item">
+        <a href="widgets.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-photo-film"></i></span>
+          <span class="menu-text">Widgets</span>
+        </a>
+      </div>
+      <div class="menu-item has-sub">
+        <a href="javascript:;" class="menu-link">
+          <div class="menu-icon">
+            <i class="fa-solid fa-computer"></i>
+            <span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
+          </div>
+          <div class="menu-text d-flex align-items-center">POS System</div>
+          <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+        </a>
+        <div class="menu-submenu">
+          <div class="menu-item">
+            <a href="pos_customer_order.html" target="_blank" class="menu-link">
+              <div class="menu-text">Customer Order</div>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="pos_kitchen_order.html" target="_blank" class="menu-link">
+              <div class="menu-text">Kitchen Order</div>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="pos_counter_checkout.html" target="_blank" class="menu-link">
+              <div class="menu-text">Counter Checkout</div>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="pos_table_booking.html" target="_blank" class="menu-link">
+              <div class="menu-text">Table Booking</div>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="pos_menu_stock.html" target="_blank" class="menu-link">
+              <div class="menu-text">Menu Stock</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item has-sub">
+        <a href="#" class="menu-link">
+          <span class="menu-icon"><i class="fa-brands fa-uikit"></i></span>
+          <span class="menu-text">UI Kits</span>
+          <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+        </a>
+        <div class="menu-submenu">
+          <div class="menu-item">
+            <a href="ui_bootstrap.html" class="menu-link">
+              <span class="menu-text">Bootstrap</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="ui_buttons.html" class="menu-link">
+              <span class="menu-text">Buttons</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="ui_card.html" class="menu-link">
+              <span class="menu-text">Card</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="ui_icons.html" class="menu-link">
+              <span class="menu-text">Icons</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="ui_modal_notification.html" class="menu-link">
+              <span class="menu-text">Modal & Notification</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="ui_typography.html" class="menu-link">
+              <span class="menu-text">Typography</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="ui_tabs_accordions.html" class="menu-link">
+              <span class="menu-text">Tabs & Accordions</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item has-sub">
+        <a href="#" class="menu-link">
+          <span class="menu-icon"><i class="fa fa-pen"></i></span>
+          <span class="menu-text">Forms</span>
+          <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+        </a>
+        <div class="menu-submenu">
+          <div class="menu-item">
+            <a href="form_elements.html" class="menu-link">
+              <span class="menu-text">Form Elements</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="form_plugins.html" class="menu-link">
+              <span class="menu-text">Form Plugins</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="form_wizards.html" class="menu-link">
+              <span class="menu-text">Wizards</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item has-sub">
+        <a href="#" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-table-cells"></i></span>
+          <span class="menu-text">Tables</span>
+          <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+        </a>
+        <div class="menu-submenu">
+          <div class="menu-item">
+            <a href="table_elements.html" class="menu-link">
+              <span class="menu-text">Table Elements</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="table_plugins.html" class="menu-link">
+              <span class="menu-text">Table Plugins</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item has-sub">
+        <a href="#" class="menu-link">
+          <span class="menu-icon"><i class="fa fa-pie-chart"></i></span>
+          <span class="menu-text">Charts</span>
+          <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+        </a>
+        <div class="menu-submenu">
+          <div class="menu-item">
+            <a href="chart_js.html" class="menu-link">
+              <span class="menu-text">Chart.js</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="chart_apex.html" class="menu-link">
+              <span class="menu-text">Apexcharts.js</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <a href="map.html" class="menu-link">
+          <span class="menu-icon"><i class="fa fa-compass"></i></span>
+          <span class="menu-text">Map</span>
+        </a>
+      </div>
+      <div class="menu-item has-sub">
+        <a href="#" class="menu-link">
+          <span class="menu-icon"><i class="fa fa-compass"></i></span>
+          <span class="menu-text">Layout</span>
+          <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+        </a>
+        <div class="menu-submenu">
+          <div class="menu-item">
+            <a href="layout_starter.html" class="menu-link">
+              <span class="menu-text">Starter Page</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="layout_fixed_footer.html" class="menu-link">
+              <span class="menu-text">Fixed Footer</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="layout_full_height.html" class="menu-link">
+              <span class="menu-text">Full Height</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="layout_full_width.html" class="menu-link">
+              <span class="menu-text">Full Width</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="layout_boxed_layout.html" class="menu-link">
+              <span class="menu-text">Boxed Layout</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="layout_collapsed_sidebar.html" class="menu-link">
+              <span class="menu-text">Collapsed Sidebar</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item has-sub">
+        <a href="#" class="menu-link">
+          <span class="menu-icon"><i class="fa fa-collection"></i></span>
+          <span class="menu-text">Pages</span>
+          <span class="menu-caret"><b><i class="fa-sharp fa-solid fa-arrow-down"></i></b></span>
+        </a>
+        <div class="menu-submenu">
+          <div class="menu-item">
+            <a href="page_scrum_board.html" class="menu-link">
+              <span class="menu-text">Scrum Board</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_products.html" class="menu-link">
+              <span class="menu-text">Products</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_product_details.html" class="menu-link">
+              <span class="menu-text">Product Details</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_orders.html" class="menu-link">
+              <span class="menu-text">Orders</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_order_details.html" class="menu-link">
+              <span class="menu-text">Order Details</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_gallery.html" class="menu-link">
+              <span class="menu-text">Gallery</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_search_results.html" class="menu-link">
+              <span class="menu-text">Search Results</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_coming_soon.html" class="menu-link">
+              <span class="menu-text">Coming Soon Page</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_404_error.html" class="menu-link">
+              <span class="menu-text">404 Error Page</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_login.html" class="menu-link">
+              <span class="menu-text">Login</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_register.html" class="menu-link">
+              <span class="menu-text">Register</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_messenger.html" class="menu-link">
+              <span class="menu-text">Messenger</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="page_data_management.html" class="menu-link">
+              <span class="menu-text">Data Management</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-header">Users</div>
+      <div class="menu-item">
+        <a routerLink="/Admin/admin/user" class="menu-link">
+          <span class="menu-icon"><i class="fa-regular fa-user"></i></span>
+          <span class="menu-text">Profile</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="calendar.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-calendar-days"></i></span>
+          <span class="menu-text">Calendar</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="settings.html" class="menu-link">
+          <span class="menu-icon"><i class="fa fa-gear"></i></span>
+          <span class="menu-text">Settings</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="helper.html" class="menu-link">
+          <span class="menu-icon"><i class="fa fa-gem"></i></span>
+          <span class="menu-text">Helper</span>
+        </a>
+      </div> -->
+    </div>
+
+  </div>
+
+</div>

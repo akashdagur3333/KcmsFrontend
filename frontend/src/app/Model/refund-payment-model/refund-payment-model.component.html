@@ -1,0 +1,130 @@
+<div class="card" style="background-color: black; overflow-x: hidden;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Payment</h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+      <form [formGroup]="paymentForm">
+        <div class="row">
+          <div id="SectionHide">
+            <div class="row">
+                <div class="col-xl-3">
+                    <div class="form-group mb-3">
+                      <label class="form-label" for="rfd_id">RFD ID</label>
+                      <input disabled="disabled" id="rfd_id" value="RFD{{allData._id}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+      
+                  </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="rpt_id">RPT ID</label>
+                  <input disabled="disabled" id="rpt_id" value="RPT{{allData.rpt_id}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+  
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="name">NAME</label>
+                  <input disabled="disabled" id="name" value="{{allData.name}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+
+  
+            </div>
+        <div class="row">
+            <div class="col-xl-4">
+                <label class="form-label" for="payment_type">PAYMENT TYPE</label>
+                <select class="form-select form-select-lg mb-3" formControlName="payment_type" name="payment_type">
+                  <option disabled selected value="">~Select One~</option>
+                  <option value="VSR Refund">VSR Refund</option>
+                    <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="col-xl-4">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="amount">AMOUNT</label>
+                  <input type="number" class="form-control" formControlName="amount" name="amount"
+                    placeholder="Amount">
+                </div>
+  
+              </div>
+
+              
+              <div class="col-xl-4">
+                <label class="form-label" for="payment_mode">PAYMENT MODE</label>
+                <select class="form-select form-select-lg mb-3" formControlName="payment_mode" name="payment_mode">
+                  <option disabled selected value="">~Select One~</option>
+                  <option value="CHEQUE">CHEQUE</option>
+                <option value="NEFT">NEFT</option>
+                <option value="IMPS">IMPS</option>
+                <option value="UPI">UPI</option>
+                <option value="CASH">CASH</option>
+                </select>
+              </div>
+              <div class="col-xl-4">
+                <label class="form-label" for="bank_ledger">BANK LEDGER</label>
+                <select class="form-select form-select-lg mb-3" formControlName="bank_ledger" name="bank_ledger">
+                  <option disabled selected value="">~Select One~</option>
+                  <option value="Under Review">AC/ICICI/335</option>
+                </select>
+              </div>
+              <div class="col-xl-4">
+                <label class="form-label" for="booking_year">Booking F/Y</label>
+                <select class="form-select form-select-lg mb-3" formControlName="booking_year" name="booking_year">
+                  <option disabled selected value="">~Select One~</option>
+                </select>
+              </div>
+              <div class="col-xl-4">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="payment_date">PAYMENT DATE</label>
+                  <input type="date" class="form-control" formControlName="payment_date" name="payment_date"
+                    placeholder="Payment Date">
+                </div>
+  
+              </div>
+              <div class="col-xl-4">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="txn_id">TXN ID</label>
+                  <input type="text" class="form-control" formControlName="txn_id" name="txn_id"
+                    placeholder="TXN Id">
+                </div>
+  
+              </div>
+              <div class="col-xl-4">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="director_remarks">DIRECTOR REMARKS</label>
+                  <input type="text" class="form-control" formControlName="director_remarks" name="director_remarks"
+                    placeholder="Director Remarks">
+                </div>
+  
+              </div>
+        </div>
+  
+  
+          </div>
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+          <button type="button" class="btn btn-outline-theme btn-lg" (click)="addRefundPayment()">Add Payment</button>
+          <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+  
+        </div>
+      </form>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>
+  

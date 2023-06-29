@@ -1,0 +1,61 @@
+
+<div class="card"  style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3" style="text-shadow: 1px 1px whitesmoke;font-size: 40px;font-weight: 500;">Add Financial Year</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="financialForm">
+        <div class="row">
+        <div class="col-xl-6">
+        <div class="form-group mb-3">
+        <label class="form-label" for="year_financial">Financial Year</label>
+        <input type="text" class="form-control" formControlName="year_financial" name="year_financial" placeholder="2020-21">
+        <div *ngIf="financialForm.controls['year_financial'].invalid && (financialForm.controls['year_financial'].dirty || financialForm.controls['year_financial'].touched)" class="design pt-2">
+            <span *ngIf="financialForm.controls['year_financial'].errors">
+                Financial Year is required.
+            </span>
+        </div>
+    </div>
+        
+        </div>
+        <div class="col-xl-6">
+            <label class="form-label" for="status">Status</label>
+            <select class="form-select form-select-lg mb-3" formControlName="status" name="status">
+                <div *ngIf="financialForm.controls['status'].invalid && (financialForm.controls['status'].dirty || financialForm.controls['status'].touched)" class="design pt-2">
+                <span *ngIf="financialForm.controls['status'].errors">
+                    Status Year is required.
+                </span>
+            </div>
+                <option disabled selected value="">~select One~</option>
+                <option value="Open">Open</option>
+                <option value="Close">Close</option>
+     
+              </select>
+              <div *ngIf="financialForm.controls['status'].invalid && (financialForm.controls['status'].dirty || financialForm.controls['status'].touched)" class="design pt-2 selectalart">
+                <span *ngIf="financialForm.controls['status'].errors">
+                    Status Year is required.
+                </span>
+            </div>
+            </div>
+
+       
+      
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="submit" class="btn btn-outline-theme btn-lg" [disabled]="financialForm.invalid"  (click)="addFinancial()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+        <div class="card-arrow-top-left"></div>
+        <div class="card-arrow-top-right"></div>
+        <div class="card-arrow-bottom-left"></div>
+        <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container mt-3">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        </div>

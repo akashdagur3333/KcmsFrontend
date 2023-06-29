@@ -1,0 +1,115 @@
+
+        <div id="content" class="app-content">
+            <button type="button" class="btn btn-outline-theme me-2" style="margin-left: 85%;" (click)="OpenModel()">Add HR Activity</button>
+<div class="col-md-2">
+    <div class="input-group" style="width: 200px;padding-top: 10px;">
+      <input type="search" aria-label="First name" class="form-control" matInput
+        (keyup)="applyFilter($event)" #input placeholder="Search">
+    </div>
+  </div>
+<div class="card mt-5">
+<div class="card-body">
+<div class="row mb-n3 table-responsive">
+<div class="small text-inverse text-opacity-50 mb-3"><b class="fw-bold">HR ACTIVITY</b></div>
+<table class="table" mat-table [dataSource]="dataSource" matSort>
+  <thead>
+    <tr>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> ID </th>
+        <td mat-cell *matCellDef="let row;let i=index;" scope="row"> {{i+1}} </td>
+      </ng-container>
+      <ng-container matColumnDef="hra_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> HRA ID </th>
+        <td mat-cell *matCellDef="let row" scope="row">HRA{{row._id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="assign_to">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> ASSIGN TO </th>
+        <td mat-cell *matCellDef="let row" scope="row"> {{row.assign_to}} </td>
+      </ng-container>
+      <ng-container matColumnDef="invite_to">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> INVITE TO </th>
+        <td mat-cell *matCellDef="let row" scope="row"> {{row.invite_to}} </td>
+      </ng-container>
+      <ng-container matColumnDef="shift">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> SHIFT </th>
+        <td mat-cell *matCellDef="let row" scope="row"> {{row.shift}} </td>
+      </ng-container>
+      <ng-container matColumnDef="start_time">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText">ACTIVITY START TIME
+        </th>
+        <td mat-cell *matCellDef="let row" scope="row"> {{row.activity_start}} </td>
+      </ng-container>
+      <ng-container matColumnDef="end_time">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> ACTIVITY END TIME
+        </th>
+        <td mat-cell *matCellDef="let row" scope="row"> {{row.activity_end}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> ACTIVITY LOCATION </th>
+        <td mat-cell *matCellDef="let row" scope="row"> {{row.activity_location}} </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> ACTIVITY NAME
+        </th>
+        <td mat-cell *matCellDef="let row" scope="row"> {{row.activity_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> ACTIVITY DESCRIPTION
+          </th>
+          <td mat-cell *matCellDef="let row" scope="row">                        
+            {{row.activity_description}}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="hr_remarks">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> HR REMARKS
+            </th>
+            <td mat-cell *matCellDef="let row" scope="row"> {{row.hr_remarks}} </td>
+          </ng-container>
+          <ng-container matColumnDef="submit_by">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> SUBMIT BY
+            </th>
+            <td mat-cell *matCellDef="let row" scope="row"> {{row.created_by}} </td>
+          </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+        <td mat-cell *matCellDef="let row">
+
+          <i _ngcontent-olo-c1="" class="fa fa-edit ms-auto text-theme fs-16px my-n1" title="edit"
+            style="color: aqua !important" (click)="editActivity(row)"></i>
+          <i _ngcontent-olo-c1="" class="fa fa-trash ps-2 ms-auto fs-16px my-n1" title="delete"
+            style="color: red !important" (click)="deleteActivity(row._id)"></i></td>
+
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" style="color: white !important;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
+</div>
+
+</div>
+<div class="card-arrow">
+<div class="card-arrow-top-left"></div>
+<div class="card-arrow-top-right"></div>
+<div class="card-arrow-bottom-left"></div>
+<div class="card-arrow-bottom-right"></div>
+</div>
+<div class="hljs-container">
+<pre><code class="xml" data-url="assets/data/table-elements/code-1.json"></code></pre>
+</div>
+
+
+   
+</div>
+</div>

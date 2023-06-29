@@ -1,0 +1,199 @@
+
+
+  <div id="content" class="app-content" style="overflow-x: hidden;"> 
+    <button type="button" class="btn btn-outline-theme me-2" style="margin-left: 85%;" (click)="OpenModel()">Add
+      Reporting</button>
+    <div class="row">
+      <div class="d-flex justify-content-end pt-5 ">
+        <div class="row">
+          <div class="d-flex justify-content-end">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="input-group" style="width: 200px;">
+                  <input type="search" aria-label="First name" class="form-control" matInput
+                    (keyup)="applyFilter($event)" #input placeholder="Search">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card mt-5">
+        <div class="card-body">
+          <div class="row mb-n3 table-responsive">
+            <div class="small text-inverse text-opacity-50 mb-3"><b class="fw-bold">REPORTINGS</b></div>
+            <table class="table" mat-table [dataSource]="dataSource" matSort>
+              <thead>
+                <tr>
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> ID </th>
+                    <td mat-cell *matCellDef="let row;let i=index;" scope="row"> {{i+1}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="rpt_id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> RPT ID </th>
+                    <td mat-cell *matCellDef="let row" scope="row">RPT{{row._id}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> TYPE </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.employee_type}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="offer_letter">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> OFFER LETTER
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.offer_letter_account}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> NAME </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.employee_name}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="father_name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> FATHER NAME
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.father_name}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="mother_name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> MOTHER NAME
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.mother_name}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="package">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> PACKAGE </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.package[0].package_name}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="sex">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> SEX </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.gender}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="aadhar">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> AADHAR </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.aadhar_number}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="reporting_date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> REPORTING DATE
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.reported_at}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="reported_at">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> REPORTED AT
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.reported_at}} </td>
+                  </ng-container>
+
+
+
+                  <ng-container matColumnDef="reported_by">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> REPORTED BY
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.reported_by}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="doj">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> D.O.J </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.batch_starting_date}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="total_value">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> TOTAL VALUE
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.total_value}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="total_vsr">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> VSR
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.total_vsr}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="paid_vsr">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> PAID VSR </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.paid_vsr}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="fine">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> FINE </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.fine}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="paid_fine">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> PAID FINE </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.paid_fine}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="paid_other">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> OTHER CHARGES </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.other}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="fineWaiver">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> FINE WAIVER
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.fineWaiver}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="vsrWaiver">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> VSR WAIVER
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.vsrWaiver}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="otherWaiver">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> OTHER WAIVER
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.otherWaiver}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="pending_value">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> PENDING VALUE
+                    </th>
+                    <td mat-cell *matCellDef="let row" scope="row"> {{row.pending_value}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="add">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Add </th>
+                    <td mat-cell *matCellDef="let row" class="tableText">
+                      <i _ngcontent-olo-c1="" class="fa fa-user-plus ms-auto text-theme fs-16px my-n1 pe-2"
+                        title="AddReciept" style="color: aqua !important" (click)="addReciept(row)"></i>
+                      <i _ngcontent-olo-c1="" class="fa fa-user-plus ms-auto text-theme fs-16px my-n1 pe-2"
+                        title="AddFine" style="color: aqua !important" (click)="addFine(row)"></i>
+                        <i _ngcontent-olo-c1="" class="fa fa-user-plus ms-auto text-theme fs-16px my-n1 pe-2"
+                        title="AddOtherCharges" style="color: aqua !important" (click)="addother(row)"></i>
+                      <i _ngcontent-olo-c1="" class="fa fa-user-plus ms-auto text-theme fs-16px my-n1 pe-2"
+                        title="AddFineWaiver" style="color: aqua !important" (click)="addFineWaiver(row)"></i>
+                      <i _ngcontent-olo-c1="" class="fa fa-user-plus ms-auto text-theme fs-16px my-n1 pe-2"
+                        title="AddVSRWaiver" style="color: aqua !important" (click)="addVSRWaiver(row)"></i>
+                        <i _ngcontent-olo-c1="" class="fa fa-user-plus ms-auto text-theme fs-16px my-n1"
+                        title="AddOtherWaiver" style="color: aqua !important" (click)="addOtherWaiver(row)"></i>
+                  </ng-container>
+
+                  <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                    <td mat-cell *matCellDef="let row">
+
+                      <i _ngcontent-olo-c1="" class="fa fa-edit ms-auto text-theme fs-16px my-n1" title="edit"
+                        style="color: aqua !important" (click)="editReporting(row)"></i>
+                      <i _ngcontent-olo-c1="" class="fa fa-trash ps-2 ms-auto fs-16px my-n1" title="delete"
+                        style="color: red !important" (click)="deleteReporting(row._id)"></i></td>
+
+                  </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns" style="color: white !important;"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
+          </div>
+
+        </div>
+        <div class="card-arrow">
+          <div class="card-arrow-top-left"></div>
+          <div class="card-arrow-top-right"></div>
+          <div class="card-arrow-bottom-left"></div>
+          <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container">
+          <pre><code class="xml" data-url="assets/data/table-elements/code-1.json"></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+

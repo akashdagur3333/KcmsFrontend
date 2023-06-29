@@ -1,0 +1,72 @@
+
+<div class="card"  style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3" style="font-family: 'Courier New', Courier, monospace;text-shadow: 1px 1px whitesmoke;font-size: 40px;font-weight: 500;">Add Training Batch</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="batchForm">
+        <div class="row">
+        <div class="col-xl-6">
+        <div class="form-group mb-3">
+        <label class="form-label" for="user_name">Batch Name</label>
+        <input type="text" class="form-control" formControlName="batch_name" name="batch_name" placeholder="Batch Name">
+        </div>
+        
+        </div>
+        <div class="col-xl-6">
+            <label class="form-label" for="batch_location">Batch Location</label>
+            <select class="form-select form-select-lg mb-3" formControlName="batch_location" name="batch_location">
+                <option disabled selected value="">~select One~</option>
+                <option value="Gurugram (Ho)">Gurugram (Ho)</option>
+                </select>
+            </div>
+        <div class="col-xl-6">
+            <div class="form-group mb-3">
+            <label class="form-label" for="batch_starting_date">Batch Starting Date</label>
+            <input type="date" class="form-control" formControlName="batch_starting_date" name="batch_starting_date">
+            </div>
+            
+            </div> 
+           
+            <div class="col-xl-6">
+                <label class="form-label" for="batch_location">Batch Size</label>
+                <select class="form-select form-select-lg mb-3" formControlName="batch_size" name="batch_size">
+                    <option disabled selected value="">~select One~</option>
+                    <option *ngFor="let s of allBatchSize" value="{{s.batchSize}}">{{s.batchSize}}</option>
+                   
+                    </select>
+                </div>
+                <div class="col-xl-6">
+                    <label class="form-label" for="batch_location">Batch Type</label>
+                    <select class="form-select form-select-lg mb-3" formControlName="batch_type" name="batch_typTechnical">
+                        <option disabled selected value="">~select One~</option>
+                        <option *ngFor="let s of allSubdepartment" value="{{s.Sub_department}}">{{s.Sub_department}}</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-6">
+                        <label class="form-label" for="batch_trainer">Batch Trainer</label>
+                        <select class="form-select form-select-lg mb-3" formControlName="batch_trainer" name="batch_trainer">
+                            <option disabled selected value="">~select One~</option>
+                            <option *ngFor="let s of allTrainer" value="{{s.name}}">{{s.name}}</option>
+                            </select>
+                        </div>
+        
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addBatch()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+        <div class="card-arrow-top-left"></div>
+        <div class="card-arrow-top-right"></div>
+        <div class="card-arrow-bottom-left"></div>
+        <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container mt-3">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        </div>

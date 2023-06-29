@@ -1,0 +1,86 @@
+<div class="card" style="background-color: black; overflow-x: hidden;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Apply Report</h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+      <form [formGroup]="AssignedTaskForm">
+        <div class="row">
+                <div class="col-xl-4" id="hidden">
+                    <div class="form-group mb-3">
+                      <label class="form-label">TSK ID</label>
+                      <input disabled="disabled" style="width:100%" value="TSK{{allData.tsk_id}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+      
+                  </div>
+              <div class="col-xl-4">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="task_expiry_date">EXPIRED DATE</label>
+                  <input type="date" class="form-control" formControlName="task_expiry_date" name="task_expiry_date"
+                    placeholder="Project Name">
+                </div>
+  
+              </div>
+              <div class="col-xl-4" id="hidden">
+                <div class="form-group mb-3">
+                  <label class="form-label">ASSIGN BY</label>
+                  <input disabled="disabled" style="width:100%" value="RPT{{allData.assign_by}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+              <div class="col-xl-4" id="perf">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="remarkStatus">REMARK</label>
+                  <input type="text" class="form-control" formControlName="remarkStatus" name="remarkStatus"
+                    placeholder="Remark">
+                </div>
+  
+                
+              </div>
+         
+              <div class="col-xl-4" id="hidden1">
+                <div class="form-group mb-3">
+                  <label class="form-label">STATUS</label>
+                  <input disabled="disabled" style="width:100%" value="{{Status}}"
+                    class="btn btn-blue span3 disabledColor">
+                </div>
+  
+              </div>
+
+              <div class="col-xl-6" id="status" hidden>
+                <label class="form-label" for="status">Status</label>
+                <select class="form-select form-select-lg mb-3" formControlName="status" name="status">
+                  <option value="1" id="1">Assign</option>
+                  <option value="2" id="2">Performing</option>
+                  <option value="3"  id="3">Re-Assign</option>
+                  <option value="4" id="4">Applied For Check</option>
+                  <option value="5" id="5">Completed</option>
+                  <option value="6" id="6">Failed</option>
+                  </select>
+                </div>
+      
+      
+  
+  
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+          <button type="button" class="btn btn-outline-theme btn-lg" (click)="updateStatus()">Submit</button>
+          <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+  
+        </div>
+      </form>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>
+  

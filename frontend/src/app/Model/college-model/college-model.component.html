@@ -1,0 +1,141 @@
+
+<div class="card"  style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3" style="font-family: 'Courier New', Courier, monospace;text-shadow: 1px 1px whitesmoke;font-size: 40px;font-weight: 500;">Colleges Form</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="collegeForm">
+        <div class="row">
+        <div class="col-xl-6">
+        <div class="form-group mb-3">
+        <label class="form-label" for="college_name">College Name</label>
+        <input type="text" class="form-control" formControlName="college_name" name="college_name" placeholder="College Name">
+        </div>
+        
+        </div>
+        <div class="col-xl-6">
+            <div class="form-group mb-3">
+            <label class="form-label" for="college_city">College city</label>
+            <input type="text" class="form-control" formControlName="college_city" name="college_city" placeholder="College City">
+            </div>
+            
+            </div>
+        <div class="col-xl-6">
+            <label class="form-label" for="college_state">College State</label>
+            <select class="form-select form-select-lg mb-3" formControlName="college_state" name="college_state">
+                <option selected disabled value="">~select One~</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                <option value="Daman and Diu">Daman and Diu</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Puducherry">Puducherry</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>              
+              </select>
+            </div>
+        <div class="col-xl-6">
+            <div class="form-group mb-3">
+            <label class="form-label" for="college_pin_code">College pin code</label>
+            <input type="number" class="form-control" placeholder="Enter Pin Code" formControlName="college_pin_code" name="college_pin_code">
+            </div>
+            
+            </div> 
+           
+            <div class="col-xl-6">
+                <label class="form-label" for="college_type">College Type</label>
+                <select class="form-select form-select-lg mb-3" formControlName="college_type" name="college_type">
+                    <option selected disabled value="">~select One~</option>
+                    <option value="Private">Private</option>
+                    <option value="Government">Government</option>
+                    <option value="International">International</option>
+                    </select>
+                </div>
+                <!-- <div class="col-xl-6">
+                    <label class="form-label" for="batch_location">Batch Type</label>
+                    <select class="form-select form-select-lg mb-3" formControlName="batch_type" name="batch_typTechnical">
+                        <option>~select One~</option>
+                        <option>Technical</option>
+                        <option value="UI/UX">UI/UX</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Android Development">Android Development</option>
+                        <option value="iOS Development">iOS Development</option>
+                        <option value="Backend Development">Backend Development</option>
+                        <option value="Testing">Testing</option>
+                        <option value="Graphics">Graphics</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option >HR</option>
+                        <option value="General (HR)">General (HR)</option>
+                        <option value="Recruitment (HR)">Recruitment (HR)</option>
+                        <option value="Backend (HR)">Backend (HR)</option>
+                        <option >Operations</option>
+                        <option value="sales">sales</option>
+                        <option value="Bussiness Development">Bussiness Development</option>
+                        </select>
+                    </div> -->
+                <div class="col-xl-6">
+                    <div class="form-group mb-3">
+                    <label class="form-label" for="tnp_head_name">TNP Head(Name)</label>
+                    <input type="text" class="form-control" formControlName="tnp_head_name" placeholder="TNP Head(Name)">
+                    </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="form-group mb-3">
+                        <label class="form-label" for="tnp_head_contact">TNP Head(contact no)</label>
+                        <input type="number" class="form-control" formControlName="tnp_head_contact" placeholder="TNP Head(Contact Number)">
+                        </div>
+                        </div>
+
+                        <div class="col-xl-6">
+                            <div class="form-group mb-3">
+                            <label class="form-label" for="tnp_head_email">TNP Head(Email ID)</label>
+                            <input type="email" class="form-control" formControlName="tnp_head_email" placeholder="TNP Head(Email ID)">
+                            </div>
+                            </div>
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addColleges()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+        <div class="card-arrow-top-left"></div>
+        <div class="card-arrow-top-right"></div>
+        <div class="card-arrow-bottom-left"></div>
+        <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container mt-3">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        </div>

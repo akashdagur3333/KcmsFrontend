@@ -1,0 +1,65 @@
+<div class="card" style="background-color: black;">
+  <h1 class="d-flex justify-content-center pt-3"
+    style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Users</h1>
+  <div class="hljs-container pb-0">
+    <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+  </div>
+  <div class="card-body pb-2">
+    <div class="col-xl-12">
+      <div class="form-group mb-3">
+
+
+        <div class="table-responsive">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th scope="row">
+                  <input type="checkbox" class="form-check-input">
+                </th>
+                <th scope="col">ID</th>
+                <th scope="col">RPT ID</th>
+                <th scope="col">TYPE</th>
+                <th scope="col">NAME</th>
+                <th scope="col">FATHER NAME</th>
+                <th scope="col">SEX</th>
+                <th scope="col">AADHAR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of res;let i=index">
+                <th scope="row"><input type="checkbox" class="form-check-input"
+                  [checked]="user.select"
+                  (change)="userChange($event,user,user._id)"
+                  ></th>
+                <th scope="row">{{i+1}}</th>
+                <td>RPT{{user._id}}</td>
+                <td>{{user.employee_type}}</td>
+                <td>{{user.employee_name}}</td>
+              <td>{{user.father_name}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.aadhar_number}}</td>
+                    </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+
+      </div>
+      <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" (click)="addUser()">Add User</button>
+
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="" >Close</button>
+      </div>
+    </div>
+  </div>
+  <div class="card-arrow">
+    <div class="card-arrow-top-left"></div>
+    <div class="card-arrow-top-right"></div>
+    <div class="card-arrow-bottom-left"></div>
+    <div class="card-arrow-bottom-right"></div>
+  </div>
+  <div class="hljs-container mt-3">
+    <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+  </div>
+</div>

@@ -1,0 +1,330 @@
+<!-- <div id="app" class="app">
+
+    <app-header></app-header>
+    <app-sidebar></app-sidebar> -->
+    
+    <div id="content" class="app-content">
+        <button type="button" class="btn btn-outline-theme me-2" style="margin-left: 85%;" (click)="OpenModel()">Add College</button>
+        <div class="row pt-5">   
+        <div class="card">
+            <div class="card-body">
+            
+            <ul class="nav nav-tabs">
+            <li class="nav-item me-1"><a href="#allColleges" class="nav-link active" data-bs-toggle="tab">All Colleges</a></li>
+            <li class="nav-item me-1"><a href="#panelColleges" class="nav-link" data-bs-toggle="tab">Panel Colleges</a></li>
+            <li class="nav-item me-1"><a href="#proposedColleges" class="nav-link" data-bs-toggle="tab">Proposed Colleges</a></li>
+  
+        </ul>
+            
+            
+            <div class="tab-content pt-3">
+            
+            <div class="tab-pane fade show active" id="allColleges">
+                <div class="col-md-2">
+                    <div class="input-group pt-4" style="width: 200px;display: flex;justify-content: end;">
+                        <input type="search" aria-label="First name" class="form-control" matInput (keyup)="applyFilter2($event)" #input placeholder="Search">
+                    </div>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body">
+                    <div class="row mb-n3 table-responsive">
+                    <div class="small text-inverse text-opacity-50 mb-3"><b class="fw-bold">ALL COLLEGES</b></div>
+                    <table class="table" mat-table [dataSource]="dataSource2" matSort>
+                    <thead>
+                    <tr>
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="whiteColor tableText"> ID </th>
+                            <td mat-cell *matCellDef="let row;let i=index" scope="row"class="whiteColor tableText"> {{i+1}}</td>
+                          </ng-container>
+                          <ng-container matColumnDef="college_id">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">COLLEGE ID </th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> CLG{{row._id}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="category">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">CATEGORY </th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.status}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="college_name">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">COLLEGE NAME</th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.college_name}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="city">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">CITY </th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.college_city}} </td>
+                          </ng-container>
+                          
+                          <ng-container matColumnDef="state">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">STATE</th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.college_state}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="pin_code">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">PIN CODE </th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.college_pin_code}} </td>
+                          </ng-container>
+                          
+                          <ng-container matColumnDef="type">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">TYPE</th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.college_type}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="tnp_head">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">TNP HEAD </th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText">Name:{{row.tnp_head_name}} <br>
+                                Mobile:{{row.tnp_head_contact}} <br>
+                                Email:{{row.tnp_head_email}} </td>
+                          </ng-container>
+                          
+                          <ng-container matColumnDef="date">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"class="whiteColor tableText">DATE</th>
+                            <td mat-cell *matCellDef="let row" scope="row"class="whiteColor tableText"> {{row.created_at}} </td>
+                          </ng-container>
+                
+                  
+                          <ng-container matColumnDef="add">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header class="whiteColor tableText"> ADD </th>
+                        <td mat-cell *matCellDef="let row" > 
+                            <i _ngcontent-olo-c1="" class="fa-solid fa-square-plus ps-2 ms-auto fs-16px my-n1" (click)="openDrive(row)" style="color: aqua;"></i></td>                     
+                      </ng-container>
+                  
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header class="whiteColor tableText"> ACTION </th>
+                        <td mat-cell *matCellDef="let row" > 
+                            <i _ngcontent-olo-c1="" class="fa fa-edit ms-auto text-theme fs-16px my-n1" (click)="editColleges(row)"></i>
+                            <i _ngcontent-olo-c1="" class="fa fa-trash ps-2 ms-auto fs-16px my-n1" style="color: red;" (click)="deleteColleges(row._id)"></i></td>        
+                      </ng-container>
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns2" style="color: white !important;"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+                
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4" class="whiteColor tableText">No data matching the filter "{{input.value}}"</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                 
+                    </tbody>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" class="whiteColor tableText"></mat-paginator>
+                
+                    </div>
+                    
+                
+                    </div>
+                    <div class="card-arrow">
+                    <div class="card-arrow-top-left"></div>
+                    <div class="card-arrow-top-right"></div>
+                    <div class="card-arrow-bottom-left"></div>
+                    <div class="card-arrow-bottom-right"></div>
+                    </div>
+                    <div class="hljs-container">
+                    <pre><code class="xml" data-url="assets/data/table-elements/code-1.json"></code></pre>
+                    </div>
+                    </div>
+                
+                <!-- <div class="card mt-5" >
+                    <div class="card-body">
+                    <div class="table-responsive">
+                    <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">COLLEGE ID</th>
+                            <th scope="col">CATEGORY</th>
+                            <th scope="col">COLLEGE NAME</th>
+                            <th scope="col">CITY</th>
+                            <th scope="col">STATE</th>
+                            <th scope="col">PIN CODE</th>
+                            <th scope="col">TYPE</th>
+                            <th scope="col">TNP HEAD</th>
+                            <th scope="col">DATE</th>
+                            <th scope="col">ADD</th>
+                            <th scope="col">ACTION</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                   <tr *ngFor="let colleges of allColleges;let i=index;">
+                        <th scope="row">{{i+1}}</th>
+                        <td>CLG{{colleges._id}}</td>
+                        <td>{{colleges.status}}</td>
+                        <td>{{colleges.college_name}}</td>
+                        <td>{{colleges.college_city}}</td>
+                        <td>{{colleges.college_state}}</td>
+                        <td>{{colleges.college_pin_code}}</td>
+                        <td>{{colleges.college_type}}</td>
+                        <td>Name:{{colleges.tnp_head_name}} <br>
+                            Mobile:{{colleges.tnp_head_contact}} <br>
+                            Email:{{colleges.tnp_head_email}}</td>
+                        <td>{{colleges.created_at}}</td>
+                        <td> <i _ngcontent-olo-c1="" id="addDrive" class="fa-solid fa-square-plus ps-2 ms-auto fs-16px my-n1" (click)="openDrive(colleges)" style="color: aqua;"></i></td>
+                        <td><i _ngcontent-olo-c1="" class="fa fa-edit ms-auto text-theme fs-16px my-n1" (click)="editColleges(colleges)"></i>
+                            <i _ngcontent-olo-c1="" class="fa fa-trash ps-2 ms-auto fs-16px my-n1" style="color: red;" (click)="deleteColleges(colleges._id)"></i></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    </div>
+                    <div class="card-arrow">
+                    <div class="card-arrow-top-left"></div>
+                    <div class="card-arrow-top-right"></div>
+                    <div class="card-arrow-bottom-left"></div>
+                    <div class="card-arrow-bottom-right"></div>
+                    </div>
+                    <div class="hljs-container">
+                    <pre><code class="xml" data-url="assets/data/table-elements/code-10.json"></code></pre>
+                    </div>
+                    </div> -->
+            </div>
+            
+            
+            <div class="tab-pane fade" id="panelColleges">
+                <app-panel-college></app-panel-college>
+
+
+
+                <!-- <div class="card mt-5" >
+                    <div class="card-body">
+                    <div class="table-responsive">
+                    <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">COLLEGE ID</th>
+                            <th scope="col">COLLEGE NAME</th>
+                            <th scope="col">CITY</th>
+                            <th scope="col">STATE</th>
+                            <th scope="col">PIN CODE</th>
+                            <th scope="col">TYPE</th>
+                            <th scope="col">TNP HEAD</th>
+                            <th scope="col">DATE</th>
+                            <th scope="col">ADD</th>
+                            <th scope="col">ACTION</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let colleges of panelCollege;let i=index">
+                            <th scope="row">{{i+1}}</th>
+                            <td>CLG{{colleges._id}}</td>
+                            <td>{{colleges.college_name}}</td>
+                            <td>{{colleges.college_city}}</td>
+                            <td>{{colleges.college_state}}</td>
+                            <td>{{colleges.college_pin_code}}</td>
+                            <td>{{colleges.college_type}}</td>
+                            <td>Name:{{colleges.tnp_head_name}} <br>
+                                Mobile:{{colleges.tnp_head_contact}} <br>
+                                Email:{{colleges.tnp_head_email}}</td>
+                            <td>{{colleges.created_at}}</td>
+                            <td> <i _ngcontent-olo-c1="" class="fa-solid fa-square-plus ps-2 ms-auto fs-16px my-n1" (click)="openDrive(colleges)" style="color: aqua;"></i></td>
+                            <td><i _ngcontent-olo-c1="" class="fa fa-edit ms-auto text-theme fs-16px my-n1" (click)="editColleges(colleges)"></i>
+                                <i _ngcontent-olo-c1="" class="fa fa-trash ps-2 ms-auto fs-16px my-n1" style="color: red;" (click)="deleteColleges(colleges._id)"></i></td>
+                            </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    </div>
+                    <div class="card-arrow">
+                    <div class="card-arrow-top-left"></div>
+                    <div class="card-arrow-top-right"></div>
+                    <div class="card-arrow-bottom-left"></div>
+                    <div class="card-arrow-bottom-right"></div>
+                    </div>
+                    <div class="hljs-container">
+                    <pre><code class="xml" data-url="assets/data/table-elements/code-10.json"></code></pre>
+                    </div>
+                    </div> -->
+            </div>
+            
+            <div class="tab-pane fade" id="proposedColleges">
+           <app-proposed-college></app-proposed-college>     
+
+
+
+                <!-- <div class="card mt-5" >
+                    <div class="card-body">
+                    <div class="table-responsive">
+                    <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">COLLEGE ID</th>
+                            <th scope="col">COLLEGE NAME</th>
+                            <th scope="col">CITY</th>
+                            <th scope="col">STATE</th>
+                            <th scope="col">PIN CODE</th>
+                            <th scope="col">TYPE</th>
+                            <th scope="col">TNP HEAD</th>
+                            <th scope="col">DATE</th>
+                            <th scope="col">ADD</th>
+                            <th scope="col">ACTION</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let colleges of proposedCollege;let i=index">
+                            <th scope="row">{{i+1}}</th>
+                            <td>CLG-{{colleges._id}}</td>
+                            <td>{{colleges.college_name}}</td>
+                            <td>{{colleges.college_city}}</td>
+                            <td>{{colleges.college_state}}</td>
+                            <td>{{colleges.college_pin_code}}</td>
+                            <td>{{colleges.college_type}}</td>
+                            <td>Name:{{colleges.tnp_head_name}} <br>
+                                Mobile:{{colleges.tnp_head_contact}} <br>
+                                Email:{{colleges.tnp_head_email}}</td>
+                            <td>{{colleges.created_at}}</td>
+                            <td> <button type="button" class="btn btn-theme" (click)="addPanel(colleges)">Add to panel college</button></td>
+                            <td>
+                                <i _ngcontent-olo-c1="" class="fa fa-trash ps-2 ms-auto fs-16px my-n1" style="color: red;" (click)="deleteColleges(colleges._id)"></i></td>
+                            </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    </div>
+                    <div class="card-arrow">
+                    <div class="card-arrow-top-left"></div>
+                    <div class="card-arrow-top-right"></div>
+                    <div class="card-arrow-bottom-left"></div>
+                    <div class="card-arrow-bottom-right"></div>
+                    </div>
+                    <div class="hljs-container">
+                    <pre><code class="xml" data-url="assets/data/table-elements/code-10.json"></code></pre>
+                    </div>
+                    </div> -->
+            </div>
+            
+            
+            
+         
+            
+            </div>
+            
+            </div>
+            <div class="card-arrow">
+            <div class="card-arrow-top-left"></div>
+            <div class="card-arrow-top-right"></div>
+            <div class="card-arrow-bottom-left"></div>
+            <div class="card-arrow-bottom-right"></div>
+            </div>
+            <div class="hljs-container">
+            <pre><code class="xml" data-url="assets/data/ui-tabs-accordions/code-1.json"></code></pre>
+            </div>
+            </div>
+  
+
+  
+
+    
+
+
+
+
+      
+   </div>  
+    
+    </div>
+    
+    <!-- <app-panel></app-panel>
+    
+
+    
+    
+    <a href="#" data-toggle="scroll-to-top" class="btn-scroll-top fade"><i class="fa fa-arrow-up"></i></a>
+    
+    </div> -->

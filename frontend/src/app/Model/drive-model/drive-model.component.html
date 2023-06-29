@@ -1,0 +1,95 @@
+
+<div class="card"  style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3" style="font-family: 'Courier New', Courier, monospace;text-shadow: 1px 1px whitesmoke;font-size: 40px;font-weight: 500;">Drive Form</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="driveForm">
+        <div class="row">
+        <div class="col-xl-6">
+        <div class="form-group mb-3">
+        <label class="form-label" for="clg_id">CLG ID</label>
+        <input type="text" class="form-control" formControlName="clg_id" name="clg_id">
+        </div>
+        
+        </div>
+        <div class="col-xl-6">
+            <label class="form-label" for="drive_type">Drive Type</label>
+            <select class="form-select form-select-lg mb-3" formControlName="drive_type" name="drive_type" (change)="drive_type()">
+                <option selected disabled value="">~select One~</option>
+                <option value="Virtual Placement">Virtual Placement</option>
+                <option value="In Campus">In Campus</option>
+                <option value="Job Fair">Job Fair</option>
+     
+              </select>
+            </div>
+        <div class="col-xl-6">
+            <div class="form-group mb-3">
+            <label class="form-label" for="drive_date">Drive Date</label>
+            <input type="date" class="form-control" formControlName="drive_date" name="drive_date">
+            </div>
+            
+            </div> 
+            <div class="col-xl-6">
+                <div class="form-group mb-3">
+                <label class="form-label" for="team_lead">Team Lead</label>
+                <input type="text" class="form-control" formControlName="team_lead" name="team_lead" placeholder="Team Lead">
+                </div>
+                
+                </div> 
+           
+                <div class="col-xl-6">
+                    <div class="form-group mb-3">
+                    <label class="form-label" for="hr_name">HR Name</label>
+                    <input type="text" class="form-control" formControlName="hr_name" name="hr_name" placeholder="HR Name">
+                    </div>
+                    
+                    </div> 
+                    <div class="col-xl-6">
+                        <div class="form-group mb-3">
+                        <label class="form-label" for="technical_person">Technical Person</label>
+                        <input type="text" class="form-control" formControlName="technical_person" name="technical_person" placeholder="Technical Person">
+                        </div>
+                        
+                        </div> 
+            <div class="col-xl-6" id="mode_of_travel">
+                <label class="form-label" for="mode_of_travel">Mode of Travel</label>
+                <select class="form-select form-select-lg mb-3" formControlName="mode_of_travel" name="mode_of_travel">
+                    <option selected disabled value="">~select One~</option>
+                    <option value="Cab">Cab</option>
+                    <option value="Train">Train</option>
+                    <option value="Flight">Flight</option>
+                    <option value="Other">Other</option>
+
+                    </select>
+                </div>
+
+                <div class="col-xl-6" id="travel_type">
+                    <label class="form-label" for="travel_type">Travel Type</label>
+                    <select class="form-select form-select-lg mb-3" formControlName="travel_type" name="travel_type">
+                        <option selected disabled value="">~select One~</option>
+                        <option value="client">client</option>
+                        <option value="Knocial India">Knocial India</option>
+    
+                        </select>
+                    </div>               
+                  
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addDrives()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+        <div class="card-arrow-top-left"></div>
+        <div class="card-arrow-top-right"></div>
+        <div class="card-arrow-bottom-left"></div>
+        <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container mt-3">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        </div>

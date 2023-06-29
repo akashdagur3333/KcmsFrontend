@@ -1,0 +1,204 @@
+
+<div class="card"  style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3" style="font-family: 'Courier New', Courier, monospace;text-shadow: 1px 1px whitesmoke;font-size: 40px;font-weight: 500;">Add USER</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="UserForm" >
+        <div class="row">
+            <div class="col-xl-6" id="hidden1">
+                <div class="form-group mb-3">
+                <label class="form-label" for="rpt_id">RPT ID</label>
+          <input type="text" class="form-control" id="rpt_id" formControlName="rpt_id" name="rpt_id" required="required">
+        <div *ngIf="UserForm.controls['rpt_id'].invalid && (UserForm.controls['rpt_id'].dirty || UserForm.controls['rpt_id'].touched)" class="design pt-2">
+            <span *ngIf="UserForm.controls['rpt_id'].errors">
+            RPT ID is required.
+            </span>
+        </div>
+                </div>
+                </div>
+        <div class="col-xl-6">
+        <div class="form-group mb-3">
+        <label class="form-label" for="user_name">Name</label>
+        <input type="text" class="form-control" id="user_name" formControlName="user_name" name="user_name" placeholder="User Name" required="required">
+        <div *ngIf="UserForm.controls['user_name'].invalid && (UserForm.controls['user_name'].dirty || UserForm.controls['user_name'].touched)" class="design pt-2">
+            <span *ngIf="UserForm.controls['user_name'].errors">
+            Name is required.
+            </span>
+        </div>
+    </div>
+        
+        </div>
+        
+        <div class="col-xl-6">
+            <div class="form-group mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email" name="email" placeholder="name@example.com">
+            <div *ngIf="UserForm.controls['email'].invalid && (UserForm.controls['email'].dirty || UserForm.controls['email'].touched)" class="design pt-2">
+                <span *ngIf="UserForm.controls['email'].errors">
+                    Email is required.
+                </span>
+            </div>
+        </div>
+            
+            </div>  <div class="col-xl-6">
+                <div class="form-group mb-3">
+                <label class="form-label" for="password">password</label>
+                <input type="password" class="form-control" id="password"  #input formControlName="password" placeholder="password">
+                </div>
+                <div *ngIf="UserForm.controls['password'].invalid && (UserForm.controls['password'].dirty || UserForm.controls['password'].touched)" class="design">
+                    <span *ngIf="UserForm.controls['password'].errors">
+                        password is required.
+                    </span>
+                </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="form-group mb-3">
+                    <label class="form-label" for="roles">Roles</label>
+                    <select class="form-select" id="roles"  #input formControlName="roles" name="roles">
+                        <option value="technical">Technical</option>
+                        <option value="hr">HR</option>
+                        <option value="user">User</option>
+                    </select>
+                    </div>
+                    <div *ngIf="UserForm.controls['roles'].invalid && (UserForm.controls['roles'].dirty || UserForm.controls['roles'].touched)" class="design">
+                        <span *ngIf="UserForm.controls['roles'].errors">
+                            Roles is required.
+                        </span>
+                    </div>
+                    </div>
+                <div class="col-xl-6">
+                    <div class="form-group mb-3">
+                    <label class="form-label" for="confirm_password">Confirm Password</label>
+                    <input type="password" class="form-control" formControlName="confirm_password" placeholder="Confirm Password">
+                    </div>
+                    <div *ngIf="UserForm.controls['confirm_password'].invalid && (UserForm.controls['confirm_password'].dirty || UserForm.controls['confirm_password'].touched)" class="design">
+                        <span *ngIf="UserForm.controls['confirm_password'].errors">
+                            Confirm Password is required.
+                        </span>
+                    </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="form-group mb-3">
+                        <label class="form-label" for="phone_no">Phone Numbere</label>
+                        <input type="number" class="form-control" id="phone_no" formControlName="phone_no" placeholder="Phone Numbere">
+                        </div>
+                        <div *ngIf="UserForm.controls['phone_no'].invalid && (UserForm.controls['phone_no'].dirty || UserForm.controls['phone_no'].touched)" class="design">
+                            <span *ngIf="UserForm.controls['phone_no'].errors">
+                                Phone Numbere is required.
+                            </span>
+                        </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="form-group mb-3">
+                                <label class="form-label" for="shift">Shift</label>
+                                <select class="form-select" id="shift"  #input formControlName="shift" name="shift">
+                                    <option *ngFor="let shift of shifts" value="{{shift._id}}">{{shift.shift_name}}</option>
+                                    <!-- <option value="hr">HR</option>
+                                    <option value="user">User</option> -->
+                                </select>
+                            </div>
+                            <div *ngIf="UserForm.controls['shift'].invalid && (UserForm.controls['shift'].dirty || UserForm.controls['shift'].touched)" class="design">
+                                <span *ngIf="UserForm.controls['shift'].errors">
+                                    Shift is required.
+                                </span>
+                            </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="department">Departments</label>
+                                    <select class="form-select" id="department"  #input formControlName="department" name="department" (change)="DepartmentChange($event)">
+                                        <option *ngFor="let dep of Departments" value="{{dep.name}}">{{dep.name}}</option>
+                                        <!-- <option value="hr">HR</option>
+                                        <option value="user">User</option> -->
+                                    </select>
+                                </div>
+                                <div *ngIf="UserForm.controls['department'].invalid && (UserForm.controls['department'].dirty || UserForm.controls['department'].touched)" class="design">
+                                    <span *ngIf="UserForm.controls['phone_no'].errors">
+                                        Department is required.
+                                    </span>
+                                </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label" for="sub_department">Sub department</label>
+                                        <select class="form-select" id="sub_department"  #input formControlName="sub_department" name="sub_department">
+                                            <option *ngFor="let subDepartment of SubDepartment" value="{{subDepartment.Sub_department}}">{{subDepartment.Sub_department}}</option>
+                                            <!-- <option value="hr">HR</option>
+                                            <option value="user">User</option> -->
+                                        </select>
+                                    </div>
+                                    <div *ngIf="UserForm.controls['sub_department'].invalid && (UserForm.controls['sub_department'].dirty || UserForm.controls['sub_department'].touched)" class="design">
+                                        <span *ngIf="UserForm.controls['sub_department'].errors">
+                                           Sub Designation is required.
+                                        </span>
+                                    </div>
+                                    </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label" for="designation">Designations</label>
+                                        <select class="form-select" id="designation"  #input formControlName="designation" name="designation">
+                                            <option *ngFor="let designation of designationSelect" value="{{designation.designation}}">{{designation.designation}}</option>
+                                            <!-- <option value="hr">HR</option>
+                                            <option value="user">User</option> -->
+                                        </select>
+                                    </div>
+                                    <div *ngIf="UserForm.controls['designation'].invalid && (UserForm.controls['designation'].dirty || UserForm.controls['designation'].touched)" class="design">
+                                        <span *ngIf="UserForm.controls['designation'].errors">
+                                            Designation is required.
+                                        </span>
+                                    </div>
+                                    </div>   
+                                    <div class="col-xl-6">
+                                        <div class="form-group mb-3">
+                                            <label class="form-label" for="office_location">Office Location</label>
+                                            <select class="form-select" id="office_location"  #input formControlName="office_location" name="office_location">
+                                                <option *ngFor="let officeLocation of locations" value="{{officeLocation._id}}">{{officeLocation.location}}</option>
+                                                <!-- <option value="hr">HR</option>
+                                                <option value="user">User</option> -->
+                                            </select>
+                                        </div>
+                                        <div *ngIf="UserForm.controls['office_location'].invalid && (UserForm.controls['office_location'].dirty || UserForm.controls['office_location'].touched)" class="design">
+                                            <span *ngIf="UserForm.controls['office_location'].errors">
+                                                Office Location is required.
+                                            </span>
+                                        </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label" for="status">Status</label>
+                                                <select class="form-select" id="status"  #input formControlName="status" name="status">
+                                                    <option disabled selected value="">~Select One~</option>
+                                                    <option value="false">Active</option>
+                                                    <option value="true">In-Active</option>
+                                                    <!-- <option value="hr">HR</option>
+                                                    <option value="user">User</option> -->
+                                                </select>
+                                            </div>
+                                            <div *ngIf="UserForm.controls['status'].invalid && (UserForm.controls['status'].dirty || UserForm.controls['status'].touched)" class="design">
+                                                <span *ngIf="UserForm.controls['status'].errors">
+                                                    Status is required.
+                                                </span>
+                                            </div>
+                                            </div>
+                
+
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addUser()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+        <div class="card-arrow-top-left"></div>
+        <div class="card-arrow-top-right"></div>
+        <div class="card-arrow-bottom-left"></div>
+        <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container mt-3">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        </div>

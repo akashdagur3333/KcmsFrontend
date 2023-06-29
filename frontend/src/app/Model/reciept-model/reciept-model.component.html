@@ -1,0 +1,100 @@
+<div class="card"  style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3" style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add New Reciept <span class="ms-3 p-1" style="font-size: 18px;border: 2px solid greenyellow;border-radius: 4px;box-shadow: 1px 1px 1px 1px rgb(141, 231, 5);">{{detail}}</span></h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="recieptForm">
+        <div class="row">
+        <div class="col-xl-4">
+        <div class="form-group mb-3">
+        <label class="form-label" for="rpt_id">RPT ID</label>
+        <input type="text" class="form-control" formControlName="rpt_id" name="rpt_id">
+        </div>
+        
+        </div>
+
+        <div class="col-xl-4">
+            <label class="form-label" for="financial_year">Financial Year</label>
+            <select class="form-select form-select-lg mb-3" formControlName="financial_year" name="financial_year">
+                <option *ngFor="let year of AllFinancial" value="{{year.year_financial}}">{{year.year_financial}}</option>
+     
+              </select>
+            </div>
+            <div class="col-xl-4">
+                <label class="form-label" for="ledger">Reciept Ledger</label>
+                <select class="form-select form-select-lg mb-3" formControlName="ledger" name="ledger">
+                    <option value="Ac/335">Ac/335</option>
+                    <option value="Cash/HO">Cash/HO</option>
+         
+                  </select>
+                </div>
+      
+                <div class="col-xl-4">
+                    <label class="form-label" for="type">Reciept Type</label>
+                    <select class="form-select form-select-lg mb-3" formControlName="type" name="type">
+                        <option value="vsr">VSR</option>
+                        <option value="fine">FINE</option>
+                        <option value="other">OTHER</option>
+
+             
+                      </select>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="form-group mb-3">
+                        <label class="form-label" for="amount">Reciept Amount</label>
+                        <input type="number" class="form-control" (keyup)="gst_value($event)" #input formControlName="amount" name="amount" placeholder="Enter Amount">
+                        </div>
+                        
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="form-group mb-3">
+                            <label class="form-label" for="txn_id">Reciept TXN ID</label>
+                            <input type="text" class="form-control" formControlName="txn_id" name="txn_id" placeholder="Enter Reciept TXN ID">
+                            </div>
+                            
+                            </div>
+
+
+                            <div class="col-xl-4">
+                                <label class="form-label" for="submited_at">Reciept Submitted To</label>
+                                <select class="form-select form-select-lg mb-3" formControlName="submited_at" name="submited_at">
+                                    <option *ngFor="let location of AllLocation" value="{{location.location}}">{{location.location}}</option>
+                         
+                                  </select>
+                                </div>
+                          
+
+                            <div class="col-xl-4">
+                                <div class="form-group mb-3">
+                                <label class="form-label" for="gst_amount">GST Value</label>
+                                <input type="number" class="form-control" formControlName="gst_amount" name="gst_amount" placeholder="Enter GST Value">
+                                </div>
+                                
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group mb-3">
+                                    <label class="form-label" for="pending_value">Total Pending Value (Inc. All):</label>
+                                    <input type="number" class="form-control" formControlName="pending_value" name="pending_value" placeholder="Enter Total Pending Value">
+                                    </div>
+                                    
+                                    </div>
+      
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addReciept()">Submit</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+        <div class="card-arrow-top-left"></div>
+        <div class="card-arrow-top-right"></div>
+        <div class="card-arrow-bottom-left"></div>
+        <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container mt-3">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        </div>

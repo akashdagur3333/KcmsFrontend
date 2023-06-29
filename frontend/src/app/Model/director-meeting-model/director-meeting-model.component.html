@@ -1,0 +1,113 @@
+<div class="card" style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Director Meeting</h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+      <form [formGroup]="directorMeetingForm">
+        <div class="row">
+          <div class="col-xl-6">
+            <label class="form-label" for="assign_to">Assign To</label>
+            <select class="form-select form-select-lg mb-3" formControlName="assign_to" name="assign_to" (change)="getrptId()">
+              <option *ngFor="let dep of allDepartment" value="{{dep.designation}}">{{dep.designation}}</option>
+              <!-- <option value="Virtual Placement">Virtual Placement</option>
+                      <option value="In Campus">In Campus</option>
+                      <option value="Job Fair">Job Fair</option> -->
+  
+            </select>
+          </div>
+          <div class="col-xl-6">
+            <div class="form-group mb-3">
+              <label class="form-label" for="invite_to">Invite To</label>
+              <input type="text" class="form-control" formControlName="invite_to" name="invite_to"
+          >
+            </div>
+  
+          </div>
+          <div class="col-xl-6">
+            <div class="form-group mb-3">
+              <label class="form-label" for="meeting_date">MEETING Date</label>
+              <input type="date" class="form-control" formControlName="meeting_date" name="meeting_date">
+            </div>
+  
+          </div>
+          <div class="col-xl-6">
+            <label class="form-label" for="shift">Shift</label>
+            <select class="form-select form-select-lg mb-3" formControlName="shift" name="shift">
+              <option *ngFor="let shift of allShift" value="{{shift.shift_name}}">{{shift.shift_name}}</option>
+              <!-- <option value="Virtual Placement">Virtual Placement</option>
+                      <option value="In Campus">In Campus</option>
+                      <option value="Job Fair">Job Fair</option> -->
+  
+            </select>
+          </div>
+          <div class="col-xl-6">
+            <div class="form-group mb-3">
+              <label class="form-label" for="meeting_start">MEETING Start Time</label>
+              <input type="time" class="form-control" formControlName="meeting_start" name="meeting_start">
+            </div>
+  
+          </div>
+          <div class="col-xl-6">
+            <div class="form-group mb-3">
+              <label class="form-label" for="meeting_end">MEETING End Time</label>
+              <input type="time" class="form-control" formControlName="meeting_end" name="meeting_end">
+            </div>
+  
+          </div>
+  
+          <div class="col-xl-6">
+            <label class="form-label" for="meeting_location">MEETING Location</label>
+            <select class="form-select form-select-lg mb-3" formControlName="meeting_location" name="meeting_location">
+              <option *ngFor="let location of allLocation" value="{{location.location}}">{{location.location}}</option>
+              <!-- <option value="Virtual Placement">Virtual Placement</option>
+                                  <option value="In Campus">In Campus</option>
+                                  <option value="Job Fair">Job Fair</option> -->
+  
+            </select>
+          </div>
+          <div class="col-xl-6">
+            <div class="form-group mb-3">
+              <label class="form-label" for="meeting_name">MEETING Name</label>
+              <input type="text" class="form-control" formControlName="meeting_name" name="meeting_name"
+                placeholder="Meeting Name">
+            </div>
+  
+          </div>
+          <div class="col-xl-6">
+            <div class="form-group mb-3">
+              <label class="form-label" for="meeting_description">MEETING Description</label>
+              <input type="text" class="form-control" formControlName="meeting_description" name="meeting_description"
+                placeholder="Meeting Description">
+            </div>
+  
+          </div>
+          <div class="col-xl-6">
+            <div class="form-group mb-3">
+              <label class="form-label" for="meeting_remarks">HR Remarks</label>
+              <input type="text" class="form-control" formControlName="meeting_remarks" name="meeting_remarks"
+                placeholder="Meeting Remarks">
+            </div>
+  
+          </div>
+  
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+          <button type="button" class="btn btn-outline-theme btn-lg" (click)="addHrMeeting()">{{Submit}}</button>
+          <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+  
+        </div>
+      </form>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>
+  

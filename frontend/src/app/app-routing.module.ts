@@ -1,0 +1,954 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './Pages/home/home.component';
+import { SidebarComponent } from './Component/sidebar/sidebar.component';
+import { HeaderComponent } from './Component/header/header.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { UserComponent } from './Pages/Admin/user/user.component';
+import { Home1Component } from './Pages/User/home1/home1.component';
+import { TrainingBatchesComponent } from './Pages/training-batches/training-batches.component';
+import { CollegesComponent } from './Pages/colleges/colleges.component';
+import { DriveComponent } from './Pages/drive/drive.component';
+import { RouteGuardService } from './services/route-guard.service';
+import { StudentComponent } from './Pages/student/student.component';
+import { SettingComponent } from './Pages/setting/setting.component';
+import { ReportingComponent } from './Pages/reporting/reporting.component';
+import { RecieptComponent } from './Pages/reciept/reciept.component';
+import { FineComponent } from './Pages/fine/fine.component';
+import { FineWaiverComponent } from './Pages/fine-waiver/fine-waiver.component';
+import { VSRWaiverComponent } from './Pages/vsrwaiver/vsrwaiver.component';
+import { JobStatusComponent } from './Pages/EmpStatus/job-status/job-status.component';
+import { AwaitedComponent } from './Pages/EmpStatus/awaited/awaited.component';
+import { InTrainingComponent } from './Pages/EmpStatus/in-training/in-training.component';
+import { TrainingCompletedComponent } from './Pages/EmpStatus/training-completed/training-completed.component';
+import { JoinedComponent } from './Pages/EmpStatus/joined/joined.component';
+import { LeftComponent } from './Pages/EmpStatus/left/left.component';
+import { ClientComponent } from './Pages/Client/client.component';
+import { TrainingsComponent } from './Pages/trainings/trainings.component';
+import { TestQuestionsComponent } from './Pages/test-questions/test-questions.component';
+import { TrainingTestsComponent } from './Pages/training-tests/training-tests.component';
+import { JoiningsComponent } from './Pages/joinings/joinings.component';
+import { BatchSizeComponent } from './Pages/batch-size/batch-size.component';
+import { TrainersComponent } from './Pages/trainers/trainers.component';
+import { OtherWaiverComponent } from './Pages/other-waiver/other-waiver.component';
+import { OtherChargeComponent } from './Pages/other-charge/other-charge.component';
+import { InPoolComponent } from './Pages/in-pool/in-pool.component';
+import { LOAModelComponent } from './Model/loamodel/loamodel.component';
+import { HrActivityComponent } from './Pages/Metting/hr-activity/hr-activity.component';
+import { HrMeetingComponent } from './Pages/Metting/hr-meeting/hr-meeting.component';
+import { DirectorMeetingComponent } from './Pages/Metting/director-meeting/director-meeting.component';
+import { EmpServiceRecordComponent } from './Pages/emp-service-record/emp-service-record.component';
+import { LeaveBucketComponent } from './Pages/leave-bucket/leave-bucket.component';
+import { RefundsComponent } from './Pages/refunds/refunds.component';
+import { OrdersComponent } from './Pages/orders/orders.component';
+import { InvoiceComponent } from './Pages/invoice/invoice.component';
+import { TeamComponent } from './Pages/team/team.component';
+import { TotalProjectComponent } from './Pages/total-project/total-project.component';
+import { TotalTaskComponent } from './Pages/total-task/total-task.component';
+import { AssignedTaskComponent } from './Pages/assigned-task/assigned-task.component';
+import { CompletedTaskComponent } from './Pages/completed-task/completed-task.component';
+import { FailedTaskComponent } from './Pages/failed-task/failed-task.component';
+import { TimesetComponent } from './Pages/Timer/timeset/timeset.component';
+import { environment } from './enviroment';
+import { TotalAssignmentComponent } from './Pages/total-assignment/total-assignment.component';
+import { EmpPerformanceComponent } from './Pages/emp-performance/emp-performance.component';
+import { IndexComponent } from './Pages/User/index/index.component';
+import { UsertotalAssignmentComponent } from './Pages/User/usertotal-assignment/usertotal-assignment.component';
+import { UserAssignedTaskComponent } from './Pages/User/user-assigned-task/user-assigned-task.component';
+import { UserCompletedTaskComponent } from './Pages/User/user-completed-task/user-completed-task.component';
+import { UserFailedTaskComponent } from './Pages/User/user-failed-task/user-failed-task.component';
+import { MainAdminFullComponent } from './Component/main-admin-full/main-admin-full.component';
+import { MainUserFullComponent } from './Component/main-user-full/main-user-full.component';
+import { AssignComponent } from './Pages/Common/assign/assign.component';
+import { CompleteComponent } from './Pages/Common/complete/complete.component';
+import { FailComponent } from './Pages/Common/fail/fail.component';
+import { SystemAttendenceComponent } from './Pages/system-attendence/system-attendence.component';
+import { AttendenceComponent } from './Pages/Common/attendence/attendence.component';
+
+const routes: Routes = [
+  {
+    path:'home',
+    component:HomeComponent,
+    pathMatch:'full',
+    canActivate:[RouteGuardService],
+    data:{
+      expectedRole:environment.AdminRole
+    }
+  },
+  {
+    path:'',
+    redirectTo:'login',
+    pathMatch:'full'
+  },
+  {
+    path:'login',
+    component:LoginComponent,
+    pathMatch:'full'
+  },
+ {
+  path:'Admin',
+  component:MainAdminFullComponent,
+  canActivate:[RouteGuardService],
+  data:{
+    expectedRole:environment.BothAdmin
+  },
+  children:[
+    {
+      
+        path:'user',
+        component:UserComponent,
+        pathMatch:'full',
+        canActivate:[RouteGuardService],
+        data:{
+          expectedRole:environment.BothAdmin
+
+       },
+      
+    },
+  
+     {
+      path:'trainingBatches',
+      component:TrainingBatchesComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'colleges',
+      component:CollegesComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'drive',
+      component:DriveComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'student',
+      component:StudentComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'setting',
+      component:SettingComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'reporting',
+      component:ReportingComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'reciept',
+      component:RecieptComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'fine',
+      component:FineComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'otherCharges',
+      component:OtherChargeComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'fineWaiver',
+      component:FineWaiverComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'VSRWaiver',
+      component:VSRWaiverComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'otherWaiver',
+      component:OtherWaiverComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'jobStatus',
+      component:JobStatusComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'awaited',
+      component:AwaitedComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'InTraining',
+      component:InTrainingComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'TrainingCompleted',
+      component:TrainingCompletedComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'Joined',
+      component:JoinedComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'Left',
+      component:LeftComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'Client',
+      component:ClientComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'trainings',
+      component:TrainingsComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'testQuestions',
+      component:TestQuestionsComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'trainingTests',
+      component:TrainingTestsComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'joinings',
+      component:JoiningsComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'batchSize',
+      component:BatchSizeComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'trainer',
+      component:TrainersComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'inPool',
+      component:InPoolComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'letterOfAppointment',
+      component:LOAModelComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'HrActivity',
+      component:HrActivityComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'HrMeeting',
+      component:HrMeetingComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'DirectorMeeting',
+      component:DirectorMeetingComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'emp_service_records',
+      component:EmpServiceRecordComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'leave_bucket',
+      component:LeaveBucketComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'refunds',
+      component:RefundsComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     }
+     ,
+     {
+      path:'Order',
+      component:OrdersComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     }
+     ,
+     {
+      path:'Invoice',
+      component:InvoiceComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     }
+     ,
+     {
+      path:'Team',
+      component:TeamComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'TotalProject',
+      component:TotalProjectComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'TotalAssignment',
+      component:TotalAssignmentComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     }
+     ,
+    
+     {
+      path:'TotalTask',
+      component:TotalTaskComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     } ,
+     {
+      path:'AssignedTask',
+      component:AssignedTaskComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     } ,
+     {
+      path:'CompletedTask',
+      component:CompletedTaskComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'FailedTask',
+      component:FailedTaskComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     }
+     ,
+     {
+      path:'time',
+      component:TimesetComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     },
+     {
+      path:'EmpPerformance',
+      component:EmpPerformanceComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     }
+    ,
+    {
+      path:'SystemAttendence',
+      component:SystemAttendenceComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.BothAdmin
+      }
+     }
+    
+    
+  ]
+ }
+,
+{
+  path:'User',
+  component:MainUserFullComponent,
+  canActivate:[RouteGuardService],
+  data:{
+    expectedRole:environment.common
+  },
+  children:[
+    {
+      path:'index',
+      component:IndexComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.common
+      }
+     },
+     {
+      path:'assign',
+      component:AssignComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.common
+      }
+     },
+     {
+      path:'attendence',
+      component:AttendenceComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.common
+      }
+     },
+     {
+      path:'complete',
+      component:CompleteComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.common
+      }
+     },
+     {
+      path:'fail',
+      component:FailComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.common
+      }
+     },
+     {
+      path:'EmpPerformance',
+      component:EmpPerformanceComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Technical
+      }
+     },
+     {
+      path:'Team',
+      component:TeamComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Technical
+      }
+     },
+     {
+      path:'TotalProject',
+      component:TotalProjectComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Technical
+      }
+     },
+     {
+      path:'TotalAssignment',
+      component:TotalAssignmentComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Technical
+      }
+     }
+     ,
+    
+     {
+      path:'TotalTask',
+      component:TotalTaskComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Technical
+      }
+     } ,
+     {
+      path:'AssignedTask',
+      component:AssignedTaskComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Technical
+      }
+     } ,
+   
+     
+     {
+      path:'CompletedTask',
+      component:CompletedTaskComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Technical
+      }
+     },
+     
+    
+     {
+      path:'FailedTask',
+      component:FailedTaskComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Technical
+      }
+     },
+     {
+      path:'trainings',
+      component:TrainingsComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'testQuestions',
+      component:TestQuestionsComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'trainingTests',
+      component:TrainingTestsComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'joinings',
+      component:JoiningsComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'batchSize',
+      component:BatchSizeComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'trainer',
+      component:TrainersComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'inPool',
+      component:InPoolComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'letterOfAppointment',
+      component:LOAModelComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'HrActivity',
+      component:HrActivityComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'HrMeeting',
+      component:HrMeetingComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'DirectorMeeting',
+      component:DirectorMeetingComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'emp_service_records',
+      component:EmpServiceRecordComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'leave_bucket',
+      component:LeaveBucketComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'refunds',
+      component:RefundsComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'trainingBatches',
+      component:TrainingBatchesComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'colleges',
+      component:CollegesComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'drive',
+      component:DriveComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'student',
+      component:StudentComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'setting',
+      component:SettingComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'reporting',
+      component:ReportingComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'reciept',
+      component:RecieptComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'fine',
+      component:FineComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'otherCharges',
+      component:OtherChargeComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'fineWaiver',
+      component:FineWaiverComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'VSRWaiver',
+      component:VSRWaiverComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'otherWaiver',
+      component:OtherWaiverComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'jobStatus',
+      component:JobStatusComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'awaited',
+      component:AwaitedComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'InTraining',
+      component:InTrainingComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'TrainingCompleted',
+      component:TrainingCompletedComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'Joined',
+      component:JoinedComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     },
+     {
+      path:'Left',
+      component:LeftComponent,
+      pathMatch:'full',
+      canActivate:[RouteGuardService],
+      data:{
+        expectedRole:environment.Hr
+      }
+     }
+  ]
+}
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

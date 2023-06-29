@@ -1,0 +1,155 @@
+<div class="card"  style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3" style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Test</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="testForm">
+        <div class="row">
+    
+            <div class="col-xl-6">
+                <div class="form-group mb-3">
+                <label class="form-label" for="test_name">TEST NAME</label>
+                <input type="text" class="form-control" formControlName="test_name" name="test_name" placeholder="Enter Name">
+                </div>
+                
+                </div>
+                <div class="col-xl-6">
+                    <div class="form-group mb-3">
+                    <label class="form-label" for="test_date">TEST DATE</label>
+                    <input type="date" class="form-control" formControlName="test_date" name="test_date">
+                    </div>
+                    
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="form-group mb-3">
+                        <label class="form-label" for="test_start">TEST START</label>
+                        <input type="time" class="form-control" formControlName="test_start" name="test_start">
+                        </div>
+                        
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="form-group mb-3">
+                            <label class="form-label" for="test_timing">TEST TIMING</label>
+                            <input type="text" class="form-control" formControlName="test_timing" name="test_timing" placeholder="Test Timing" >
+                            </div>
+                            
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="form-group mb-3">
+                                <label class="form-label" for="test_status">TEST STATUS</label>
+                                <input type="text" class="form-control" formControlName="test_status" name="test_status" placeholder="Enter Status">
+                                </div>
+                                
+                                </div>
+
+                                <div class="col-xl-12" >
+                                    <div class="form-group mb-3">
+                                    <div class="form-label pb-3" style="border-bottom: 0.2px solid hsl(0, 10%, 88%);"> 
+                                             <button type="button" class="btn btn-outline-theme me-2" (click)="openAddQuestion()">Add Question</button>
+                                             <br>
+                                    </div>
+                        
+                                            <div class="table-responsive">
+                                            <table class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">QST ID</th>
+                                                    <th scope="col">NAME</th>
+                                                    <th scope="col">TITLE</th>
+                                                    <th scope="col">TYPE</th>
+                                                    <th scope="col">QOP1</th>
+                                                    <th scope="col">QOP2</th>
+                                                    <th scope="col">QOP3</th>
+                                                    <th scope="col">QOP4</th>
+                                                    <th scope="col">ACTION</th>
+                                                  </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let question of allQuestion;let i=index">
+                                                    <th scope="row">{{i+1}}</th>
+                                                    <td>QST{{question._id}}</td>
+                                                    <td>{{question.name}}</td>
+                                                    <td><div  style="height: 100px;overflow-y: auto;"><ul *ngFor="let r of question.question" style="list-style-type: none;">
+                                                        <li>{{r}}</li>
+                                                         </ul></div></td>
+                                                    <td>{{question.questionType}}</td>
+                                                    <td>{{question.opt1}}</td>
+                                                    <td>{{question.opt2}}</td>
+                                                    <td>{{question.opt3}}</td>
+                                                    <td>{{question.opt4}}</td>
+                                                    <td>
+                                                        <i _ngcontent-olo-c1="" class="fa fa-trash ms-auto text-theme fs-16px my-n1" (click)="deleteQuestion(question._id)"></i></td>
+                                                        </tr>
+                                            </tbody>
+                                            </table>
+                                            </div>
+                                           
+                                        
+                                    
+                                    </div>
+                                    </div>
+
+
+                                    <div class="col-xl-12" >
+                                        <div class="form-group mb-3">
+                                        <div class="form-label pb-3" style="border-bottom: 0.2px solid white;">                                           
+                                                 <button type="button" class="btn btn-outline-theme me-2" (click)="openAddUser()">Add User</button>
+                                                 <br>
+                                        </div>
+                            
+                                                <div class="table-responsive">
+                                                    <table class="table mb-0">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">ID</th>
+                                                            <th scope="col">RPT ID</th>
+                                                            <th scope="col">TYPE</th>
+                                                            <th scope="col">NAME</th>
+                                                            <th scope="col">FATHER NAME</th>
+                                                            <th scope="col">SEX</th>
+                                                            <th scope="col">AADHAR</th>
+                                                            <th scope="col">ACTION</th>
+
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr *ngFor="let user of res;let i=index">
+                                                            <th scope="row">{{i+1}}</th>
+                                                            <td>RPT{{user._id}}</td>
+                                                            <td>{{user.employee_type}}</td>
+                                                            <td>{{user.employee_name}}</td>
+                                                          <td>{{user.father_name}}</td>
+                                                            <td>{{user.gender}}</td>
+                                                            <td>{{user.aadhar_number}}</td>
+                                                            <td>
+                                                                <i _ngcontent-olo-c1="" class="fa fa-trash ms-auto text-theme fs-16px my-n1" (click)="deleteUser(user._id)"></i></td>
+                                                                </tr>
+                                                        </tbody>
+                                                      </table>
+                                                </div>
+                                               
+                                            
+                                        
+                                        </div>
+                                        </div>
+      
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addTest()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+        <div class="card-arrow-top-left"></div>
+        <div class="card-arrow-top-right"></div>
+        <div class="card-arrow-bottom-left"></div>
+        <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container mt-3">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        </div>

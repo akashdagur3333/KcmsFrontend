@@ -1,0 +1,111 @@
+<div class="card" style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add New FineWaiver <span class="ms-3 p-1"
+        style="font-size: 18px;border: 2px solid greenyellow;border-radius: 4px;box-shadow: 1px 1px 1px 1px rgb(141, 231, 5);">{{detail}}</span>
+    </h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+      <form [formGroup]="fineWaiverForm">
+        <div class="row">
+          <div class="col-xl-4">
+            <div class="form-group mb-3">
+              <label class="form-label" for="rpt_id">RPT ID</label>
+              <input type="text" class="form-control" formControlName="rpt_id" name="rpt_id">
+            </div>
+  
+          </div>
+  
+          <div class="col-xl-4">
+            <div class="form-group mb-3">
+              <label class="form-label" for="fine">Fine Imposed</label>
+              <input type="number" class="form-control" formControlName="fine" name="fine"
+                placeholder="Enter fine Imposed">
+            </div>
+  
+          </div>
+          <div class="col-xl-4">
+            <div class="form-group mb-3">
+              <label class="form-label" for="fine_paid">Fine Paid</label>
+              <input type="number" class="form-control" formControlName="fine_paid" name="fine_paid"
+                placeholder="Enter Fine">
+            </div>
+  
+          </div>
+          <div class="col-xl-4">
+            <div class="form-group mb-3">
+              <label class="form-label" for="fineWaiver">Fine Waived</label>
+              <input type="number" class="form-control" formControlName="fineWaiver" name="fineWaiver"
+                placeholder="Enter Fine">
+            </div>
+  
+          </div>
+
+          <div class="col-xl-4">
+            <div class="form-group mb-3">
+              <label class="form-label" for="finePending">Fine Pending</label>
+              <input type="number" class="form-control" formControlName="finePending" name="finePending"
+                placeholder="Enter Fine">
+            </div>
+  
+          </div>
+  
+          <div class="col-xl-4">
+            <div class="form-group mb-3">
+              <label class="form-label" for="remarks">Waiver Remarks</label>
+              <input type="text" class="form-control" formControlName="remarks" name="remarks"
+                placeholder="Enter Fine Remark">
+            </div>
+  
+          </div>
+
+          <div class="col-xl-4">
+            <div class="form-group mb-3">
+              <label class="form-label" for="amount">Fine Waiver Amount</label>
+              <input type="text" class="form-control" (keyup)="gst_value($event)"  formControlName="amount" name="amount"
+                placeholder="Enter Amount">
+            </div>
+  
+          </div>
+          <div class="col-xl-4">
+            <div class="form-group mb-3">
+              <label class="form-label" for="gst_amount">GST Value</label>
+              <input type="number" class="form-control" formControlName="gst_amount" name="gst_amount">
+            </div>
+  
+          </div>
+          <div class="col-xl-4">
+            <div class="form-group mb-3">
+              <label class="form-label" for="pending_value">Total Pending Value (Inc. All):</label>
+              <input type="number" class="form-control" formControlName="pending_value" name="pending_value"
+                placeholder="Enter Total Pending Value">
+            </div>
+  
+          </div>
+
+          <div class="col-xl-4">
+            <label class="form-label" for="waived_by">Fine Waived By:</label>
+            <select class="form-select form-select-lg mb-3" formControlName="waived_by" name="waived_by">
+               <option>~ Select One~</option>
+                <option value="KCMS">KCMS</option>
+              </select>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+          <button type="button" class="btn btn-outline-theme btn-lg" (click)="addFineWaiver()">Submit</button>
+          <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+  
+        </div>
+      </form>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>

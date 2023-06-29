@@ -1,0 +1,110 @@
+
+<div class="card"  style="background-color: black;">
+    <h1 class="d-flex justify-content-center pt-3" style="font-family: 'Courier New', Courier, monospace;text-shadow: 1px 1px whitesmoke;font-size: 40px;font-weight: 500;">Add ADMIN</h1>
+    <div class="hljs-container pb-0">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        <div class="card-body pb-2">
+        <form [formGroup]="UserForm" >
+        <div class="row">
+            <!-- <div class="col-xl-6" id="hidden1">
+                <div class="form-group mb-3">
+                <label class="form-label" for="rpt_id">Employee</label>
+                <select class="form-select" id="rpt_id" formControlName="rpt_id" name="rpt_id">
+                <option disabled selected value="">~Select One~</option>
+                <option *ngFor="let emp of AllEmployee" value="{{emp._id}}">{{emp.employee_name}}</option>
+                </select>
+                </div>
+                </div> -->
+        <div class="col-xl-6">
+        <div class="form-group mb-3">
+        <label class="form-label" for="user_name">Name</label>
+        <input type="text" class="form-control" id="user_name" formControlName="user_name" name="user_name" placeholder="User Name" required="required">
+        <div *ngIf="UserForm.controls['user_name'].invalid && (UserForm.controls['user_name'].dirty || UserForm.controls['user_name'].touched)" class="design pt-2">
+            <span *ngIf="UserForm.controls['user_name'].errors">
+            Name is required.
+            </span>
+        </div>
+    </div>
+        
+        </div>
+        
+        <div class="col-xl-6">
+            <div class="form-group mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email" name="email" placeholder="name@example.com">
+            <div *ngIf="UserForm.controls['email'].invalid && (UserForm.controls['email'].dirty || UserForm.controls['email'].touched)" class="design pt-2">
+                <span *ngIf="UserForm.controls['email'].errors">
+                    Email is required.
+                </span>
+            </div>
+        </div>
+            
+            </div>  <div class="col-xl-6">
+                <div class="form-group mb-3">
+                <label class="form-label" for="password">password</label>
+                <input type="password" class="form-control" id="password"  #input formControlName="password" placeholder="password">
+                </div>
+                <div *ngIf="UserForm.controls['password'].invalid && (UserForm.controls['password'].dirty || UserForm.controls['password'].touched)" class="design">
+                    <span *ngIf="UserForm.controls['password'].errors">
+                        password is required.
+                    </span>
+                </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="form-group mb-3">
+                    <label class="form-label" for="roles">Roles</label>
+                    <select class="form-select" id="roles"  #input formControlName="roles" name="roles">
+                    <option value="admin">Admin</option>
+                    <option value="nadmin">Normal Admin</option>
+
+                    </select>
+                    </div>
+                    <div *ngIf="UserForm.controls['roles'].invalid && (UserForm.controls['roles'].dirty || UserForm.controls['roles'].touched)" class="design">
+                        <span *ngIf="UserForm.controls['roles'].errors">
+                            Roles is required.
+                        </span>
+                    </div>
+                    </div>
+                <div class="col-xl-6">
+                    <div class="form-group mb-3">
+                    <label class="form-label" for="confirm_password">Confirm Password</label>
+                    <input type="password" class="form-control" formControlName="confirm_password" placeholder="Confirm Password">
+                    </div>
+                    <div *ngIf="UserForm.controls['confirm_password'].invalid && (UserForm.controls['confirm_password'].dirty || UserForm.controls['confirm_password'].touched)" class="design">
+                        <span *ngIf="UserForm.controls['confirm_password'].errors">
+                            Confirm Password is required.
+                        </span>
+                    </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="form-group mb-3">
+                        <label class="form-label" for="phone_no">Phone Numbere</label>
+                        <input type="number" class="form-control" id="phone_no" formControlName="phone_no" placeholder="Phone Numbere">
+                        </div>
+                        <div *ngIf="UserForm.controls['phone_no'].invalid && (UserForm.controls['phone_no'].dirty || UserForm.controls['phone_no'].touched)" class="design">
+                            <span *ngIf="UserForm.controls['phone_no'].errors">
+                                Phone Numbere is required.
+                            </span>
+                        </div>
+                        </div>
+                
+
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addUser()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+    </div>
+        </form>
+        </div>
+        <div class="card-arrow">
+        <div class="card-arrow-top-left"></div>
+        <div class="card-arrow-top-right"></div>
+        <div class="card-arrow-bottom-left"></div>
+        <div class="card-arrow-bottom-right"></div>
+        </div>
+        <div class="hljs-container mt-3">
+        <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+        </div>
+        </div>

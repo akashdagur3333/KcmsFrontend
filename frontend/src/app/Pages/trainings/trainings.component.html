@@ -1,0 +1,103 @@
+
+  
+    <div id="content" class="app-content" style="overflow-x: hidden;"> 
+      <div class="row">
+        <div class="d-flex justify-content-end pt-5 ">
+          <div class="row">
+            <div class="d-flex justify-content-end">
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="input-group" style="width: 200px;">
+                    <input type="search" aria-label="First name" class="form-control" matInput
+                      (keyup)="applyFilter($event)" #input placeholder="Search">
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+  
+        <div class="card mt-5">
+          <div class="card-body">
+            <div class="row mb-n3 table-responsive">
+              <div class="small text-inverse text-opacity-50 mb-3"><b class="fw-bold">TRAININGS</b></div>
+              <table class="table" mat-table [dataSource]="dataSource" matSort>
+                <thead>
+                  <tr>
+                    <ng-container matColumnDef="id">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> ID </th>
+                      <td mat-cell *matCellDef="let row;let i=index;" scope="row"> {{i+1}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="txn_id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> TRN ID </th>
+                        <td mat-cell *matCellDef="let row" scope="row">TXN{{row._id}} </td>
+                      </ng-container>
+                    <ng-container matColumnDef="rpt_id">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> RPT ID </th>
+                      <td mat-cell *matCellDef="let row" scope="row">RPT{{row._id}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="type">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> TYPE </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.employee_type}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> NAME </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.employee_name}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="sex">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> SEX </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.gender}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="txnStart">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> TRN (START) DATE
+                      </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.reported_at}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="txnEnd">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> TRN (END) DATE
+                      </th>
+                      <td mat-cell *matCellDef="let row" scope="row"> {{row.reported_at}} </td>
+                    </ng-container>
+  
+                    <ng-container matColumnDef="jobStatus">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> JOB STATUS
+                        </th>
+                        <td mat-cell *matCellDef="let row" scope="row">{{row.status}}</td>
+                      </ng-container>
+                      <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col" class="tableText"> JOB STATUS
+                        </th>
+                        <td mat-cell *matCellDef="let row" scope="row">Waiting</td>
+                      </ng-container>
+  
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns" style="color: white !important;"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+                  <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                  </tr>
+                </thead>
+                <tbody>
+  
+                </tbody>
+              </table>
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  
+            </div>
+  
+          </div>
+          <div class="card-arrow">
+            <div class="card-arrow-top-left"></div>
+            <div class="card-arrow-top-right"></div>
+            <div class="card-arrow-bottom-left"></div>
+            <div class="card-arrow-bottom-right"></div>
+          </div>
+          <div class="hljs-container">
+            <pre><code class="xml" data-url="assets/data/table-elements/code-1.json"></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  

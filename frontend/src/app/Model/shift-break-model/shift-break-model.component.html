@@ -1,0 +1,119 @@
+<div class="card" style="background-color: black;overflow-y: auto;">
+  <h1 class="d-flex justify-content-center pt-3"
+    style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Shift & Break</h1>
+  <div class="hljs-container pb-0">
+    <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+  </div>
+  <div class="card-body pb-2">
+    <form [formGroup]="shiftBreakForm">
+      <div class="row">
+        <h1></h1>
+        <div class="col-xl-4">
+          <div class="form-group mb-3">
+            <label class="form-label" for="shift_name">Shift Name</label>
+            <input type="text" class="form-control" formControlName="shift_name" name="shift_name" placeholder="Shift Name">
+          </div>
+
+        </div>
+
+        <div class="col-xl-4">
+          <div class="form-group mb-3">
+            <label class="form-label" for="shift_start">Shift Start Time</label>
+            <input type="time" class="form-control" formControlName="shift_start" name="shift_start">
+          </div>
+
+        </div>
+
+        <div class="col-xl-4">
+          <div class="form-group mb-3">
+            <label class="form-label" for="shift_end">Shift End Time</label>
+            <input type="time" class="form-control" formControlName="shift_end" name="shift_end">
+          </div>
+
+        </div>
+
+        <div class="col-xl-4">
+          <div class="form-group mb-3">
+            <label class="form-label" for="shift_description">Shift Description</label>
+            <input type="text" class="form-control" formControlName="shift_description" name="shift_description"
+              placeholder="Shift Description">
+          </div>
+
+        </div>
+        <h2>Break Details</h2>
+
+        <div class="col-xl-6">
+          <div class="form-group mb-3">
+            <label class="form-label" for="break1">Break Name</label>
+            <input type="text" class="form-control" formControlName="break1" name="break1" placeholder="Break Name">
+          </div>
+
+        </div>
+        <div class="col-xl-6">
+          <div class="form-group mb-3">
+            <label class="form-label" for="break1_duration">Break Duration</label>
+            <input type="number" class="form-control" formControlName="break1_duration" name="break1_duration" placeholder="Break Duration">
+          </div>
+
+        </div>
+
+        <div class="col-xl-6">
+          <div class="form-group mb-3">
+            <label class="form-label" for="break2">Break Name</label>
+            <input type="text" class="form-control" formControlName="break2" name="break2" placeholder="Break Name">
+          </div>
+
+        </div>
+        <div class="col-xl-6">
+          <div class="form-group mb-3">
+            <label class="form-label" for="break2_duration">Break Duration</label>
+            <input type="number" class="form-control" formControlName="break2_duration" name="break2_duration" placeholder="Break Duration">
+          </div>
+
+        </div>
+
+        <div class="col-xl-6">
+          <div class="form-group mb-3">
+            <label class="form-label" for="break3">Break Name</label>
+            <input type="text" class="form-control" formControlName="break3" name="break3" placeholder="Break Name">
+          </div>
+
+        </div>
+        <div class="col-xl-6">
+          <div class="form-group mb-3">
+            <label class="form-label" for="break3_duration">Break Duration</label>
+            <input type="number" class="form-control" formControlName="break3_duration" name="break3_duration" placeholder="Break Duration">
+          </div>
+
+        </div>
+
+
+        <div class="col-xl-6">
+          <label class="form-label" for="status">Status</label>
+          <select class="form-select form-select-lg mb-3" formControlName="status" name="status">
+            <option disabled selected value="">~select One~</option>
+            <option value="0">InActive</option>
+              <option value="1">Active</option>
+              </select>
+          </div>
+
+
+
+      </div>
+      <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-outline-theme btn-lg" (click)="addShiftBreak()">{{Submit}}</button>
+        <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+
+      </div>
+    </form>
+  </div>
+  <div class="card-arrow">
+    <div class="card-arrow-top-left"></div>
+    <div class="card-arrow-top-right"></div>
+    <div class="card-arrow-bottom-left"></div>
+    <div class="card-arrow-bottom-right"></div>
+  </div>
+  <div class="hljs-container mt-3">
+    <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+  </div>
+</div>

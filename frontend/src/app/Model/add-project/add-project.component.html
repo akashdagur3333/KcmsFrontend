@@ -1,0 +1,157 @@
+<div class="card" style="background-color: black; overflow-x: hidden;">
+    <h1 class="d-flex justify-content-center pt-3"
+      style="text-shadow: 1px 1px whitesmoke;font-size: 30px;font-weight: 500;">Add Project</h1>
+    <div class="hljs-container pb-0">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+    <div class="card-body pb-2">
+      <form [formGroup]="projectForm">
+        <div class="row">
+                <div class="col-xl-3" id="hidden">
+                    <div class="form-group mb-3">
+                      <label class="form-label" for="rfd_id">CLT ID</label>
+                      <input disabled="disabled" id="rfd_id" value="CLT{{allData._id}}"
+                        class="btn btn-blue span3 disabledColor">
+                    </div>
+      
+                  </div>
+          
+            <div class="col-xl-3">
+                <label class="form-label" for="project_category">Project Category</label>
+                <select class="form-select form-select-lg mb-3" formControlName="project_category" name="project_category">
+                  <option disabled selected value="">~Select One~</option>
+                  <option value="New">New</option>
+                    <option value="Existing">Existing</option>
+                    <option value="AMC">AMC</option>
+                </select>
+              </div>
+              <div class="col-xl-3">
+                
+                <label class="form-label" for="project_type">Project Type</label>
+                <select class="form-select form-select-lg mb-3" formControlName="project_type" name="project_type">
+                  <option disabled selected value="">~Select One~</option>
+                  <option value="Website (Static) Single Page">Website (Static) Single Page</option>
+                  <option value="Website (Static) Multiple Page">Website (Static) Multiple Page</option> 
+                  <option value="Website (Dynamic) Single Page">Website (Dynamic) Single Page</option>
+                  <option value="Website (Dynamic) Multiple Page">Website (Dynamic) Multiple Page</option>
+                  <option value="Website (Admin Panel)">Website (Admin Panel)</option>
+                  <option value="App (Android)">App (Android)</option>
+                  <option value="App (iOS)">App (iOS)</option>
+                  <option value="App (Hybrid)">App (Hybrid)</option>
+                  <option value="App (Admin Panel)">App (Admin Panel)</option>
+                  <option value="CRM">CRM</option>
+                  <option value="Digital Marketing (SEO)">Digital Marketing (SEO)</option>
+                  <option value="Digital Marketing (SMM)">Digital Marketing (SMM)</option>
+                  <option value="Custom (Package)">Custom (Package)</option>
+                </select>
+              </div>
+
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="project_name">Project Name</label>
+                  <input type="text" class="form-control" formControlName="project_name" name="project_name"
+                    placeholder="Project Name">
+                </div>
+  
+              </div>
+              
+              <div class="col-xl-3">
+                <label class="form-label" for="payment_type">Payment Type
+                    
+                </label>
+                <select class="form-select form-select-lg mb-3" formControlName="payment_type" name="payment_type">
+                  <option disabled selected value="">~Select One~</option>
+                  <option value="100 Advance">100 Advance</option>
+                  <option value="50 Advance 30 Middle 20 Delivery">50 Advance 30 Middle 20 Delivery</option> 
+                  <option value="50 Advance 50 Delivery">50 Advance 50 Delivery</option>
+                  <option value="30 Advance 70 Delivery">30 Advance 70 Delivery</option>
+                  <option value="0 Advance 100 Delivery">0 Advance 100 Delivery</option> 
+                </select>
+
+                
+              </div>
+              <div class="col-xl-3">
+                <label class="form-label" for="due_date">Due Date</label>
+                <select class="form-select form-select-lg mb-3" formControlName="due_date" name="due_date">
+                  <option disabled selected value="">~Select One~</option>
+                  <option value="7 Days on Invoice">7 Days on Invoice</option>
+                  <option value="10 Days on Invoice">10 Days on Invoice</option> 
+                  <option value="15 Days on Invoice">15 Days on Invoice</option> 
+                  <option value="30 Days on Invoice">30 Days on Invoice</option>
+                </select>
+              </div>
+
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="project_description">Project Description</label>
+                  <input type="text" class="form-control" formControlName="project_description" name="project_description"
+                    placeholder="Project Description">
+                </div>
+  
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="project_cost">Project Cost (Exclude GST)</label>
+                  <input type="number" class="form-control" formControlName="project_cost" name="project_cost"
+                    placeholder="Project Cost (Exclude GST)">
+                </div>
+  
+                
+              </div>
+              <div class="col-xl-3">
+                <label class="form-label" for="gst_slab">GST Slab</label>
+                <select class="form-select form-select-lg mb-3" formControlName="gst_slab" name="gst_slab">
+                  <option disabled selected value="">~Select One~</option>
+                  <option value="">~ GST Slab ~</option>
+                  <option value="28">28%</option>
+                  <option value="18">18%</option> 
+                  <option value="12">12%</option>
+                  <option value="5">5%</option> 
+                </select>
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="project_delivery_date">Project Delivery Date</label>
+                  <input type="date" class="form-control" formControlName="project_delivery_date" name="project_delivery_date"
+                    placeholder="Approx Date">
+                </div>
+  
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="domain_details">Domain Details</label>
+                  <input type="text" class="form-control" formControlName="domain_details" name="domain_details"
+                    placeholder="Domain Details">
+                </div>
+  
+              </div>
+              <div class="col-xl-3">
+                <div class="form-group mb-3">
+                  <label class="form-label" for="hosting_details">Hosting Details</label>
+                  <input type="text" class="form-control" formControlName="hosting_details" name="hosting_details"
+                    placeholder="Hosting Details">
+                </div>
+  
+              </div>
+      
+  
+  
+        </div>
+        <div class="d-flex justify-content-center pb-2">
+          <button type="button" class="btn btn-outline-theme btn-lg" (click)="addProject()">{{Submit}}</button>
+          <button type="button" class="btn btn-outline-theme btn-lg ms-3" mat-dialog-close="">Close</button>
+  
+        </div>
+      </form>
+    </div>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+    <div class="hljs-container mt-3">
+      <pre><code class="xml" data-url="assets/data/form-elements/code-1.json"></code></pre>
+    </div>
+  </div>
+  
